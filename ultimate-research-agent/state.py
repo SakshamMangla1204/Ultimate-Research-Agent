@@ -24,6 +24,14 @@ class ResearchState(TypedDict):
     #Final Output 
     final_output:str
 
+    #tool calls
+    tools_used: list[dict[str,Any]]
+    tools_output: list[dict[str,Any]]
+
+    #errors
+    errors: list[dict[str,Any]]
+    
+
 
 
 
