@@ -4,6 +4,14 @@
 MODEL_NAME = "gemini-2.5-flash"
 TEMPERATURE = 0.3
 
+# --- Multi-model settings (used by llm.py) ---
+GEMINI_MODEL = "gemini-2.5-flash"
+GROQ_MODEL = "llama-3.3-70b-versatile"
+MISTRAL_MODEL = "mistral-large-latest"
+MODEL_TEMPERATURE = 0.3
+# Allowed values: "gemini", "mistral", "groq"
+DEFAULT_MODEL = "gemini"
+
 
 class Config:
     """Central configuration for the research agent pipeline."""
