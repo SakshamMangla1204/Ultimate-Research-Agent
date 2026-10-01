@@ -1,39 +1,31 @@
-from typing import Any,TypedDict
-
-class ResearchState(TypedDict):
-    ##USER QUERY
-    query:str
-    constraints:list[dict[str,Any]]
-    research_type:str
-    output_requirments:str
-
-    #PLANNNING AND PLOTTING
-
-    plan:str
-    task:str
-    current_task:str
-    completed_task:str 
-
-    # sources
-    sources:list[dict[str]]
-    sources_metadata:list[dict[str]]
-
-    #Analysis 
-    analysis:str
-
-    #Final Output 
-    final_output:str
-
-    #tool calls
-    tools_used: list[dict[str,Any]]
-    tools_output: list[dict[str,Any]]
-
-    #errors
-    errors: list[dict[str,Any]]
-    
+from typing import Any, TypedDict
 
 
+class ResearchState(TypedDict, total=False):
+    # User request (set by request_handler)
+    query: str
+    goal: str
+    research_type: str
+    constraints: dict[str, Any]
+    output_requirements: dict[str, Any]
 
+    # Planning (set by planner)
+    plan: Any
+    tasks: list[Any]
+    current_task: dict[str, Any]
+    completed_tasks: list[Any]
 
+    # Sources (set by researcher)
+    sources: list[dict[str, Any]]
+    source_metadata: list[dict[str, Any]]
 
-   
+    # Analysis / final output
+    analysis: str
+    final_report: str
+
+    # Tool tracking
+    tool_calls: list[dict[str, Any]]
+    tool_results: list[dict[str, Any]]
+
+    # Errors
+    errors: list[str]
