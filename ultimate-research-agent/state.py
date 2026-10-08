@@ -21,6 +21,8 @@ class ResearchState(TypedDict, total=False):
 
     # Analysis / final output
     analysis: str
+    research_sufficient: bool
+    missing_information: list[str]
     final_report: str
 
     # Tool tracking
