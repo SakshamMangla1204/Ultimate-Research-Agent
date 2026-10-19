@@ -1,14 +1,33 @@
-from llm import llm
+from graph.research_graph import graph
 
 
 def main():
-    print("The Ultimate Research Agent")
-    print("Tell me, how can I help you?")
+    print("===== THE ULTIMATE RESEARCH AGENT =====")
 
-    response = llm.invoke("Introduce yourself in one line")
+    query = input("What would you like to research? ").strip()
 
-    print("Response")
-    print(response.content)
+    if not query:
+        print("Please enter a research query.")
+        return
+
+    initial_state = {
+        "query": query,
+        "errors": [],
+        "sources": [],
+        "source_metadata": [],
+        "tool_calls": [],
+        "tool_results": [],
+        "completed_tasks": [],
+    }
+
+    try:
+        result = graph.invoke(initial_state)
+
+        print("\n===== RESEARCH REPORT =====")
+        print(result.get("final_report", "No final report was generated."))
+
+    except Exception as error:
+        print(f"\nResearch execution failed: {error}")
 
 
 if __name__ == "__main__":
