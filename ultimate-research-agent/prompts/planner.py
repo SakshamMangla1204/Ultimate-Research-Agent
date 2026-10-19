@@ -127,27 +127,27 @@ Do not add any text before or after the JSON.
 
 Use the following structure:
 
-{
+{{
     "goal": "The clearly defined primary goal of the research.",
     "research_type": "The type or category of research required.",
-    "constraints": {},
-    "output_requirements": {},
+    "constraints": {{}},
+    "output_requirements": {{}},
     "plan": [
-        {
+        {{
             "step": 1,
             "description": "Description of the research stage.",
             "purpose": "Why this stage is necessary."
-        }
+        }},
     ],
     "tasks": [
-        {
+        {{
             "id": "task_1",
             "description": "Specific and actionable research task.",
             "purpose": "Why this task is necessary.",
             "status": "pending"
-        }
+        }},
     ]
-}
+}}xx
 
 Additional requirements:
 
