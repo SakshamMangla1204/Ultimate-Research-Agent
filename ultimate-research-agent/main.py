@@ -1,8 +1,11 @@
+
+import traceback
+
 from graph.research_graph import graph
 
 
 def main():
-    print("===== THE ULTIMATE RESEARCH AGENT =====")
+    print("\n===== THE ULTIMATE RESEARCH AGENT =====\n")
 
     query = input("What would you like to research? ").strip()
 
@@ -10,6 +13,7 @@ def main():
         print("Please enter a research query.")
         return
 
+    # Initialize the shared state for this research run.
     initial_state = {
         "query": query,
         "errors": [],
@@ -20,14 +24,47 @@ def main():
         "completed_tasks": [],
     }
 
-    try:
-        result = graph.invoke(initial_state)
+    print("\nStarting research...")
+    print("-" * 45)
 
-        print("\n===== RESEARCH REPORT =====")
-        print(result.get("final_report", "No final report was generated."))
+    try:
+        # Execute the LangGraph workflow.
+        result = graph.invoke(
+            initial_state,
+            config={"recursion_limit": 30},
+        )
+
+        print("\n" + "=" * 45)
+        print("RESEARCH REPORT")
+        print("=" * 45 + "\n")
+
+        final_report = result.get("final_report")
+
+        if final_report:
+            print(final_report)
+        else:
+            print("No final report was generated.")
+
+            errors = result.get("errors", [])
+            if errors:
+                print("\nReported errors:")
+                for error in errors:
+                    print(f"- {error}")
+
+        print("\n" + "=" * 45)
+        print("RESEARCH EXECUTION COMPLETED")
+        print("=" * 45)
 
     except Exception as error:
-        print(f"\nResearch execution failed: {error}")
+        print("\n" + "=" * 45)
+        print("RESEARCH EXECUTION FAILED")
+        print("=" * 45)
+
+        print(f"\nError type: {type(error).__name__}")
+        print(f"Error message: {error}")
+
+        print("\nFull traceback:")
+        traceback.print_exc()
 
 
 if __name__ == "__main__":

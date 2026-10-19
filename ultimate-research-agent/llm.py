@@ -16,48 +16,23 @@ from config import (
 
 load_dotenv()
 
-gemini_api_key=os.getenv("GOOGLE_API_KEY")
-if not gemini_api_key:
-    raise ValueError("GOOGLE_API_KEY IS NOT SET ")
+provider_settings = {
+    "gemini": ("GOOGLE_API_KEY", GEMINI_MODEL, ChatGoogleGenerativeAI),
+    "mistral": ("MISTRAL_API_KEY", MISTRAL_MODEL, ChatMistralAI),
+    "groq": ("GROQ_API_KEY", GROQ_MODEL, ChatGroq),
+}
 
-gemini_llm=ChatGoogleGenerativeAI(
-    model=GEMINI_MODEL,
+if DEFAULT_MODEL not in provider_settings:
+    raise ValueError(f"Unknown DEFAULT_MODEL: {DEFAULT_MODEL}")
+
+api_key_name, model_name, client_class = provider_settings[DEFAULT_MODEL]
+api_key = os.getenv(api_key_name)
+if not api_key:
+    raise ValueError(f"{api_key_name} is not set for DEFAULT_MODEL={DEFAULT_MODEL}")
+
+llm = client_class(
+    model=model_name,
     temperature=MODEL_TEMPERATURE,
-    api_key=gemini_api_key,
-    
+    api_key=api_key,
 )
-
-mistral_api_key=os.getenv("MISTRAL_API_KEY")
-
-if not mistral_api_key:
-    raise ValueError("MISTRAL_API KEY NOT FOUND")
-
-mistral_llm=ChatMistralAI(
-    model=MISTRAL_MODEL,
-    temperature=MODEL_TEMPERATURE,
-    api_key=mistral_api_key,
-
-)
-
-groq_api_key=os.getenv("GROQ_API_KEY")
-
-if not groq_api_key:
-    raise ValueError("GROQ_API_KEY IS NOT FOUND ")
-
-groq_llm=ChatGroq(
-    model=GROQ_MODEL,
-    temperature=MODEL_TEMPERATURE,
-    api_key=groq_api_key,
-)
-
-if DEFAULT_MODEL=="gemini":
-    llm=gemini_llm
-elif DEFAULT_MODEL=="mistral":
-    llm=mistral_llm
-elif DEFAULT_MODEL=="groq":
-    llm=groq_llm
-else:
-    raise ValueError(
-        f"Unknown DEFAULT_MODEL:{DEFAULT_MODEL}"
-    )
 
