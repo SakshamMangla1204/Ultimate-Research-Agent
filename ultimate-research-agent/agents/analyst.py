@@ -16,9 +16,11 @@ def analyst_agent(state:ResearchState)->dict:
     tool_result=state.get("tool_results","")
 
     if not sources and not tool_result:
-        return{
-            "errors":["there were no relevant sources"]
-
+        return {
+            "analysis": "",
+            "research_sufficient": False,
+            "missing_information": [],
+            "errors": ["there were no relevant sources"],
         }
 
     prompt=ANALYST_PROMPT.format(
@@ -41,9 +43,11 @@ def analyst_agent(state:ResearchState)->dict:
         result=json.loads(response_text)
 
     except json.JSONDecodeError:
-        return{
-            "errors":["Analyst return an invalid json responnse."]
-
+        return {
+            "analysis": "",
+            "research_sufficient": False,
+            "missing_information": [],
+            "errors": ["Analyst returned an invalid JSON response."],
         }
 
     analysis=result.get("analysis","")
