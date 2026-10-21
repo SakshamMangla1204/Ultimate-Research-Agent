@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/candidate.json",
+    "sha256": "99195121fbf90737503beddf4078e2b6cd35697680b4988b12c2bb09f0228310",
+    "bytes": 8393
+  },
+  "artifact": {
+    "path": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/ultimate-research-agent-architecture.html",
+    "sha256": "c3f1d1ba572f721c85a8c07ebd35bbaabd54c36760ba72ab7b2a26b4ea890d23",
+    "bytes": 836460
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/review-9/ultimate-research-agent-architecture.finalize.json",
+    "summaryReceipt": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/review-9/ultimate-research-agent-architecture.finalize-summary.json",
+    "browserCheckReceipt": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/review-9/ultimate-research-agent-architecture.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.1.0",
+    "availableVersion": "3.1.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-14T09:26:39.765Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 1930,
+  "visualReviewRecommendation": {
+    "action": "inspect-route-readability",
+    "signals": {
+      "resolvedCrossovers": 1,
+      "routesOverSuggestedBends": 1
+    },
+    "reason": "Automated gates passed, but crossings or detours still need perceptual review before claiming visual quality.",
+    "affectedRoutes": {
+      "crossings": [
+        {
+          "left": {
+            "id": "synthesizer-to-end",
+            "from": "synthesizer",
+            "to": "graph_orchestrator",
+            "label": "final_report → END",
+            "collectionIndex": 6,
+            "artifactIndex": 7
+          },
+          "right": {
+            "id": "planner-to-llm",
+            "from": "planner",
+            "to": "llm_selector",
+            "label": "invoke",
+            "collectionIndex": 8,
+            "artifactIndex": 9
+          },
+          "point": [
+            666,
+            496
+          ]
+        }
+      ],
+      "detours": [
+        {
+          "relationship": {
+            "id": "handler-to-graph",
+            "from": "request_handler",
+            "to": "graph_orchestrator",
+            "label": "intended initial state",
+            "collectionIndex": 1,
+            "artifactIndex": 2
+          },
+          "bends": 3,
+          "stretch": 1.32
+        }
+      ],
+      "truncated": false
+    },
+    "hints": [
+      "synthesizer → graph_orchestrator crosses planner → llm_selector: move the node of whichever is a branch, return, or second entrance to the other side of the main path, so that relationship runs through an empty corridor.",
+      "request_handler → graph_orchestrator needs 3 bends: move node request_handler or graph_orchestrator so they share a row or column with matching centers, or sit diagonally with a clear corner."
+    ],
+    "repair": "Trace these relationships at the desktop viewport. For Architecture, use references/architecture-layout-repair.md: reflow a blocked main path or tangled connected scene, and repair an isolated defect locally only when the surrounding composition is accepted. Preserve all semantic content and user-fixed geometry. Rerun finalize once after the edit."
+  }
+}

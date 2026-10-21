@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/candidate.json",
+    "sha256": "5be1a5e4f72acb81653dc73c0caceb8c0647c929d0ff0dc876c696fed871d152",
+    "bytes": 8433
+  },
+  "artifact": {
+    "path": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/ultimate-research-agent-architecture.html",
+    "sha256": "22c26da1cd8c4859ab764b16de58d8c9571f1538815c5c6ead999b033ad0067b",
+    "bytes": 835894
+  },
+  "gates": {
+    "validate": "fail",
+    "deliver": "not-run",
+    "check": "not-run",
+    "browser-check": "not-run"
+  },
+  "failedStage": "validate",
+  "diagnostics": [
+    {
+      "code": "composition/proper-crossing",
+      "severity": "error",
+      "message": "[composition/proper-crossing] showcase architecture connections[6] id \"synthesizer-to-end\" \"synthesizer\" -> \"graph_orchestrator\" crosses connections[8] id \"planner-to-llm\" \"planner\" -> \"llm_selector\" at [666, 460] (segments 3 and 1) — if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 6,
+        "id": "synthesizer-to-end",
+        "from": "synthesizer",
+        "to": "graph_orchestrator"
+      },
+      "evidence": {
+        "otherRelationship": {
+          "diagramType": "architecture",
+          "collection": "connections",
+          "index": 8,
+          "id": "planner-to-llm",
+          "from": "planner",
+          "to": "llm_selector"
+        },
+        "point": [
+          666,
+          460
+        ],
+        "segmentIndex": 3,
+        "otherSegmentIndex": 1
+      },
+      "supportedFixes": [
+        "if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors"
+      ]
+    },
+    {
+      "code": "layout/boundary-encloses-non-member",
+      "severity": "error",
+      "message": "Component \"graph_orchestrator\" is not wrapped by boundary \"LangGraph research pipeline\" but sits inside its frame — move it outside the frame, place the wrapped members in one compact axis-aligned cluster (no empty bay for a non-member), or add it to wraps only when it truly belongs there.",
+      "subject": {
+        "diagramType": "architecture",
+        "boundary": {
+          "kind": "region",
+          "label": "LangGraph research pipeline",
+          "wraps": [
+            "research_state",
+            "planner",
+            "researcher",
+            "analyst",
+            "synthesizer"
+          ]
+        },
+        "component": "graph_orchestrator"
+      },
+      "evidence": {
+        "bounds": {
+          "x": 398,
+          "y": 126,
+          "width": 454,
+          "height": 458
+        },
+        "component": {
+          "id": "graph_orchestrator",
+          "type": "backend",
+          "label": "LangGraph Orchestrator",
+          "x": 420,
+          "y": 300,
+          "width": 210,
+          "height": 80,
+          "pos": [
+            420,
+            300
+          ]
+        }
+      },
+      "supportedFixes": [
+        "move \"graph_orchestrator\" outside the boundary frame",
+        "reposition the wrapped members into one compact axis-aligned cluster (no empty bay) that leaves non-members outside"
+      ]
+    },
+    {
+      "code": "layout/boundary-encloses-non-member",
+      "severity": "error",
+      "message": "Component \"llm_selector\" is not wrapped by boundary \"LangGraph research pipeline\" but sits inside its frame — move it outside the frame, place the wrapped members in one compact axis-aligned cluster (no empty bay for a non-member), or add it to wraps only when it truly belongs there.",
+      "subject": {
+        "diagramType": "architecture",
+        "boundary": {
+          "kind": "region",
+          "label": "LangGraph research pipeline",
+          "wraps": [
+            "research_state",
+            "planner",
+            "researcher",
+            "analyst",
+            "synthesizer"
+          ]
+        },
+        "component": "llm_selector"
+      },
+      "evidence": {
+        "bounds": {
+          "x": 398,
+          "y": 126,
+          "width": 454,
+          "height": 458
+        },
+        "component": {
+          "id": "llm_selector",
+          "type": "cloud",
+          "label": "LLM Selector",
+          "x": 420,
+          "y": 520,
+          "width": 140,
+          "height": 64,
+          "pos": [
+            420,
+            520
+          ]
+        }
+      },
+      "supportedFixes": [
+        "move \"llm_selector\" outside the boundary frame",
+        "reposition the wrapped members into one compact axis-aligned cluster (no empty bay) that leaves non-members outside"
+      ]
+    },
+    {
+      "code": "composition/proper-crossing",
+      "severity": "error",
+      "message": "[composition/proper-crossing] showcase architecture connections[6] id \"synthesizer-to-end\" \"synthesizer\" -> \"graph_orchestrator\" crosses connections[9] id \"analyst-to-llm\" \"analyst\" -> \"llm_selector\" at [567, 412] (segments 4 and 0) — if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 6,
+        "id": "synthesizer-to-end",
+        "from": "synthesizer",
+        "to": "graph_orchestrator"
+      },
+      "evidence": {
+        "otherRelationship": {
+          "diagramType": "architecture",
+          "collection": "connections",
+          "index": 9,
+          "id": "analyst-to-llm",
+          "from": "analyst",
+          "to": "llm_selector"
+        },
+        "point": [
+          567,
+          412
+        ],
+        "segmentIndex": 4,
+        "otherSegmentIndex": 0
+      },
+      "supportedFixes": [
+        "if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 4,
+    "shown": 4,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/review-5/ultimate-research-agent-architecture.finalize.json",
+    "summaryReceipt": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/review-5/ultimate-research-agent-architecture.finalize-summary.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.1.0",
+    "availableVersion": "3.1.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-14T09:26:39.765Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 259,
+  "nextAction": {
+    "action": "edit-in-place",
+    "candidate": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/candidate.json",
+    "constraint": "Preserve all semantics and user-fixed geometry. Use references/architecture-layout-repair.md to choose a local repair or connected-scene reflow; edit the existing candidate.",
+    "then": "finalize-once"
+  }
+}

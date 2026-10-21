@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "startedAt": "2026-10-14T09:42:20.984Z",
+  "specification": {
+    "path": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/candidate.json",
+    "sha256": "539c3c87b86b150ed2dfa2a9499c75edf25cb757c51df6c7ceef58a489757571",
+    "bytes": 8456
+  },
+  "artifact": {
+    "path": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/ultimate-research-agent-architecture.html",
+    "sha256": "22c26da1cd8c4859ab764b16de58d8c9571f1538815c5c6ead999b033ad0067b",
+    "bytes": 835894
+  },
+  "stages": {
+    "validate": {
+      "status": "fail",
+      "exitCode": 1,
+      "durationMs": null,
+      "command": [
+        "/usr/local/bin/node",
+        "/Users/sakshammangla/.agents/skills/archify/bin/archify.mjs",
+        "deliver",
+        "architecture",
+        "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/candidate.json",
+        "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/ultimate-research-agent-architecture.html",
+        "--quality",
+        "showcase",
+        "--repo-root",
+        "/Users/sakshammangla/Documents/General Research agent",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": false,
+        "command": "deliver",
+        "receiptId": "c4d4dd6c-52f0-447d-87ad-30c07c217218",
+        "stage": "render",
+        "type": "architecture",
+        "input": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/candidate.json",
+        "output": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/ultimate-research-agent-architecture.html",
+        "error": "Architecture layout validation failed:\n- [clean-flow/edge-through-node] architecture connections[6] id \"synthesizer-to-end\" \"synthesizer\" -> \"graph_orchestrator\" crosses component \"researcher\" (unrelated to this relationship) on segment 3 [880, 340] -> [525, 340] (2px clearance) — if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust fromSide/toSide, set route/via, or move the component.\n- [composition/proper-crossing] showcase architecture connections[6] id \"synthesizer-to-end\" \"synthesizer\" -> \"graph_orchestrator\" crosses connections[8] id \"planner-to-llm\" \"planner\" -> \"llm_selector\" at [666, 340] (segments 3 and 1) — if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors.",
+        "diagnostics": [
+          {
+            "code": "clean-flow/edge-through-node",
+            "severity": "error",
+            "message": "[clean-flow/edge-through-node] architecture connections[6] id \"synthesizer-to-end\" \"synthesizer\" -> \"graph_orchestrator\" crosses component \"researcher\" (unrelated to this relationship) on segment 3 [880, 340] -> [525, 340] (2px clearance) — if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust fromSide/toSide, set route/via, or move the component.",
+            "subject": {
+              "diagramType": "architecture",
+              "collection": "connections",
+              "index": 6,
+              "id": "synthesizer-to-end",
+              "from": "synthesizer",
+              "to": "graph_orchestrator"
+            },
+            "evidence": {
+              "obstacleKind": "component",
+              "obstacleId": "researcher",
+              "segmentIndex": 3,
+              "from": [
+                880,
+                340
+              ],
+              "to": [
+                525,
+                340
+              ],
+              "clearancePx": 2
+            },
+            "supportedFixes": [
+              "if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust fromSide/toSide, set route/via, or move the component"
+            ]
+          },
+          {
+            "code": "composition/proper-crossing",
+            "severity": "error",
+            "message": "[composition/proper-crossing] showcase architecture connections[6] id \"synthesizer-to-end\" \"synthesizer\" -> \"graph_orchestrator\" crosses connections[8] id \"planner-to-llm\" \"planner\" -> \"llm_selector\" at [666, 340] (segments 3 and 1) — if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors.",
+            "subject": {
+              "diagramType": "architecture",
+              "collection": "connections",
+              "index": 6,
+              "id": "synthesizer-to-end",
+              "from": "synthesizer",
+              "to": "graph_orchestrator"
+            },
+            "evidence": {
+              "otherRelationship": {
+                "diagramType": "architecture",
+                "collection": "connections",
+                "index": 8,
+                "id": "planner-to-llm",
+                "from": "planner",
+                "to": "llm_selector"
+              },
+              "point": [
+                665.9999999999999,
+                340
+              ],
+              "segmentIndex": 3,
+              "otherSegmentIndex": 1
+            },
+            "supportedFixes": [
+              "if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors"
+            ]
+          }
+        ],
+        "provenance": "failed",
+        "update": {
+          "status": "unavailable",
+          "installedVersion": null,
+          "availableVersion": null,
+          "releaseNotes": null,
+          "checkedAt": null,
+          "source": null,
+          "noticeRequired": false,
+          "noticeText": null,
+          "reason": "disabled"
+        }
+      },
+      "execution": "embedded-in-deliver"
+    },
+    "deliver": {
+      "status": "not-run",
+      "execution": "blocked-by-validate"
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "clean-flow/edge-through-node",
+      "severity": "error",
+      "message": "[clean-flow/edge-through-node] architecture connections[6] id \"synthesizer-to-end\" \"synthesizer\" -> \"graph_orchestrator\" crosses component \"researcher\" (unrelated to this relationship) on segment 3 [880, 340] -> [525, 340] (2px clearance) — if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust fromSide/toSide, set route/via, or move the component.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 6,
+        "id": "synthesizer-to-end",
+        "from": "synthesizer",
+        "to": "graph_orchestrator"
+      },
+      "evidence": {
+        "obstacleKind": "component",
+        "obstacleId": "researcher",
+        "segmentIndex": 3,
+        "from": [
+          880,
+          340
+        ],
+        "to": [
+          525,
+          340
+        ],
+        "clearancePx": 2
+      },
+      "supportedFixes": [
+        "if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust fromSide/toSide, set route/via, or move the component"
+      ]
+    },
+    {
+      "code": "composition/proper-crossing",
+      "severity": "error",
+      "message": "[composition/proper-crossing] showcase architecture connections[6] id \"synthesizer-to-end\" \"synthesizer\" -> \"graph_orchestrator\" crosses connections[8] id \"planner-to-llm\" \"planner\" -> \"llm_selector\" at [666, 340] (segments 3 and 1) — if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 6,
+        "id": "synthesizer-to-end",
+        "from": "synthesizer",
+        "to": "graph_orchestrator"
+      },
+      "evidence": {
+        "otherRelationship": {
+          "diagramType": "architecture",
+          "collection": "connections",
+          "index": 8,
+          "id": "planner-to-llm",
+          "from": "planner",
+          "to": "llm_selector"
+        },
+        "point": [
+          665.9999999999999,
+          340
+        ],
+        "segmentIndex": 3,
+        "otherSegmentIndex": 1
+      },
+      "supportedFixes": [
+        "if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors"
+      ]
+    }
+  ],
+  "evidence": {
+    "receipt": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/review-7/ultimate-research-agent-architecture.finalize.json",
+    "summaryReceipt": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/review-7/ultimate-research-agent-architecture.finalize-summary.json"
+  },
+  "visualReview": "not-requested",
+  "failedStage": "validate",
+  "finishedAt": "2026-10-14T09:42:21.265Z",
+  "durationMs": 281,
+  "update": {
+    "status": "current",
+    "installedVersion": "3.1.0",
+    "availableVersion": "3.1.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-14T09:26:39.765Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  }
+}

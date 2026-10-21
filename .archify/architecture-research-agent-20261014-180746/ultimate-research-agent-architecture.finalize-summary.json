@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/candidate.json",
+    "sha256": "1f26567a6ae710c01fc7e7d583404332a3370cbf6bb59122b7d61c7e0f6d5d12",
+    "bytes": 8777
+  },
+  "artifact": {
+    "path": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/ultimate-research-agent-architecture.html"
+  },
+  "gates": {
+    "validate": "fail",
+    "deliver": "not-run",
+    "check": "not-run",
+    "browser-check": "not-run"
+  },
+  "failedStage": "validate",
+  "diagnostics": [
+    {
+      "code": "clean-flow/endpoint-side-direction",
+      "severity": "error",
+      "message": "[clean-flow/endpoint-side-direction] architecture connections[6] id \"synthesizer-to-end\" \"synthesizer\" -> \"graph_orchestrator\" final segment 3 [600, 392] -> [495, 360] does not honor toSide \"bottom\" — it must run vertical upward from below; keep automatic routing so the renderer can use a side-aware bridge, or set truthful fromSide/toSide with perpendicular via segments.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 6,
+        "id": "synthesizer-to-end",
+        "from": "synthesizer",
+        "to": "graph_orchestrator"
+      },
+      "evidence": {
+        "endpoint": "target",
+        "authoredField": "toSide",
+        "sideOrigin": "authored",
+        "side": "bottom",
+        "segmentIndex": 3,
+        "from": [
+          600,
+          392
+        ],
+        "to": [
+          495,
+          360
+        ],
+        "expectedAxis": "vertical",
+        "expectedDirection": "upward from below"
+      },
+      "supportedFixes": [
+        "keep automatic routing so the renderer can use a side-aware bridge, or set truthful fromSide/toSide with perpendicular via segments"
+      ]
+    },
+    {
+      "code": "clean-flow/edge-through-node",
+      "severity": "error",
+      "message": "[clean-flow/edge-through-node] architecture connections[6] id \"synthesizer-to-end\" \"synthesizer\" -> \"graph_orchestrator\" crosses component \"analyst\" (unrelated to this relationship) on segment 2 [810, 392] -> [600, 392] (2px clearance) — if the authored via/fromSide/toSide are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust fromSide/toSide, set route/via, or move the component.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 6,
+        "id": "synthesizer-to-end",
+        "from": "synthesizer",
+        "to": "graph_orchestrator"
+      },
+      "evidence": {
+        "obstacleKind": "component",
+        "obstacleId": "analyst",
+        "segmentIndex": 2,
+        "from": [
+          810,
+          392
+        ],
+        "to": [
+          600,
+          392
+        ],
+        "clearancePx": 2
+      },
+      "supportedFixes": [
+        "if the authored via/fromSide/toSide are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust fromSide/toSide, set route/via, or move the component"
+      ]
+    },
+    {
+      "code": "composition/proper-crossing",
+      "severity": "error",
+      "message": "[composition/proper-crossing] showcase architecture connections[6] id \"synthesizer-to-end\" \"synthesizer\" -> \"graph_orchestrator\" crosses connections[9] id \"analyst-to-llm\" \"analyst\" -> \"llm_selector\" at [810, 422] (segments 1 and 0) — if the authored via/fromSide/toSide are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 6,
+        "id": "synthesizer-to-end",
+        "from": "synthesizer",
+        "to": "graph_orchestrator"
+      },
+      "evidence": {
+        "otherRelationship": {
+          "diagramType": "architecture",
+          "collection": "connections",
+          "index": 9,
+          "id": "analyst-to-llm",
+          "from": "analyst",
+          "to": "llm_selector"
+        },
+        "point": [
+          810,
+          422
+        ],
+        "segmentIndex": 1,
+        "otherSegmentIndex": 0
+      },
+      "supportedFixes": [
+        "if the authored via/fromSide/toSide are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors"
+      ]
+    },
+    {
+      "code": "architecture/component-sublabel-overflow",
+      "severity": "error",
+      "message": "Sublabel \"START → planner → researcher → analyst → synthesizer → END\" needs ~209px at the 6px legible minimum, but component \"graph_orchestrator\" provides 202px — shorten the sublabel or widen size.",
+      "subject": {
+        "diagramType": "architecture",
+        "nodeId": "graph_orchestrator"
+      },
+      "evidence": {
+        "text": "START → planner → researcher → analyst → synthesizer → END",
+        "minimumFontPx": 6,
+        "requiredWidthPx": 209,
+        "availableWidthPx": 202
+      },
+      "supportedFixes": [
+        "shorten component \"graph_orchestrator\" sublabel \"START → planner → researcher → analyst → synthesizer → END\" while preserving its meaning",
+        "or widen component \"graph_orchestrator\" so the sublabel keeps at least 209px of text width at the 6px legible minimum"
+      ]
+    },
+    {
+      "code": "architecture/component-sublabel-overflow",
+      "severity": "error",
+      "message": "Sublabel \"executes current task with web search\" needs ~134px at the 6px legible minimum, but component \"researcher\" provides 132px — shorten the sublabel or widen size.",
+      "subject": {
+        "diagramType": "architecture",
+        "nodeId": "researcher"
+      },
+      "evidence": {
+        "text": "executes current task with web search",
+        "minimumFontPx": 6,
+        "requiredWidthPx": 134,
+        "availableWidthPx": 132
+      },
+      "supportedFixes": [
+        "shorten component \"researcher\" sublabel \"executes current task with web search\" while preserving its meaning",
+        "or widen component \"researcher\" so the sublabel keeps at least 134px of text width at the 6px legible minimum"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 5,
+    "shown": 5,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/ultimate-research-agent-architecture.finalize.json",
+    "summaryReceipt": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/ultimate-research-agent-architecture.finalize-summary.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.1.0",
+    "availableVersion": "3.1.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-14T09:26:39.765Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 257,
+  "nextAction": {
+    "action": "edit-in-place",
+    "candidate": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/candidate.json",
+    "constraint": "Preserve all semantics and user-fixed geometry. Use references/architecture-layout-repair.md to choose a local repair or connected-scene reflow; edit the existing candidate.",
+    "then": "finalize-once"
+  }
+}

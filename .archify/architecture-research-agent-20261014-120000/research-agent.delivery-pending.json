@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "command": "deliver",
+  "status": "pending",
+  "receiptId": "ca132e77-7087-4255-aaaa-7f235b0ae6e4",
+  "input": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-120000/candidate.json",
+  "output": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-120000/research-agent.html"
+}

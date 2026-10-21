@@ -1,0 +1,1518 @@
+{
+  "artifact": "dependencies.json",
+  "status": "ready",
+  "phase": "analyze",
+  "targetPath": "/Users/sakshammangla/Documents/General Research agent/ultimate-research-agent",
+  "scanRoot": ".",
+  "internalDependencies": [
+    {
+      "sourceModuleId": "subsystem-0-0-tools",
+      "targetModuleId": "subsystem-3-0-agents",
+      "relation": "imports",
+      "summary": "imports x1",
+      "confidence": "high",
+      "evidence": [
+        "edge:file_tools_web_fetch_py:imports:ref_state_py_import_typing:tools/web_fetch.py:14:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-0-0-tools",
+      "targetModuleId": "subsystem-5-0-tools",
+      "relation": "calls",
+      "summary": "contains x1, calls x1",
+      "confidence": "high",
+      "evidence": [
+        "edge:file_tools_web_fetch_py:contains:symbol_tools_web_fetch_py_class_textextractor:tools/web_fetch.py:31:0",
+        "edge:symbol_tools_web_fetch_py_function_extract_text:calls:symbol_tools_web_fetch_py_class_textextractor:tools/web_fetch.py:63:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-2-0-config-py",
+      "targetModuleId": "subsystem-3-0-agents",
+      "relation": "imports",
+      "summary": "imports x1",
+      "confidence": "high",
+      "evidence": [
+        "edge:file_tools_web_search_py:imports:ref_state_py_import_typing:tools/web_search.py:4:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-2-0-config-py",
+      "targetModuleId": "subsystem-7-0-tools",
+      "relation": "contains",
+      "summary": "contains x1",
+      "confidence": "high",
+      "evidence": [
+        "edge:file_tools_web_search_py:contains:symbol_tools_web_search_py_function_web_search:tools/web_search.py:21:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-3-0-agents",
+      "targetModuleId": "subsystem-1-0-agents",
+      "relation": "contains",
+      "summary": "contains x4",
+      "confidence": "high",
+      "evidence": [
+        "edge:file_agents_analyst_py:contains:symbol_agents_analyst_py_function_analyst_agent:agents/analyst.py:7:0",
+        "edge:file_agents_planner_py:contains:symbol_agents_planner_py_function_planner_agent:agents/planner.py:8:0",
+        "edge:file_agents_researcher_py:contains:symbol_agents_researcher_py_function_researcher_agent:agents/researcher.py:5:0",
+        "edge:file_agents_synthesizer_py:contains:symbol_agents_synthesizer_py_function_synthesizer_agent:agents/synthesizer.py:8:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-4-0-tests",
+      "targetModuleId": "subsystem-3-0-agents",
+      "relation": "imports",
+      "summary": "imports x2",
+      "confidence": "high",
+      "evidence": [
+        "edge:file_tests_test_analyst_smoke_py:imports:file_agents_analyst_py:tests/test_analyst_smoke.py:22:0",
+        "edge:file_tests_test_analyst_smoke_py:imports:ref_agents_analyst_py_import_json:tests/test_analyst_smoke.py:1:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-1-1-main-py",
+      "targetModuleId": "subsystem-2-0-config-py",
+      "relation": "imports",
+      "summary": "imports x1",
+      "confidence": "medium",
+      "evidence": [
+        "edge:file_main_py:imports:file_llm_py:main.py:1:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-3-0-agents",
+      "targetModuleId": "subsystem-2-0-config-py",
+      "relation": "imports",
+      "summary": "imports x4",
+      "confidence": "medium",
+      "evidence": [
+        "edge:file_agents_analyst_py:imports:file_llm_py:agents/analyst.py:3:0",
+        "edge:file_agents_planner_py:imports:file_llm_py:agents/planner.py:3:0",
+        "edge:file_agents_researcher_py:imports:file_tools_web_search_py:agents/researcher.py:2:0",
+        "edge:file_agents_synthesizer_py:imports:file_llm_py:agents/synthesizer.py:3:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-0-0-tools",
+      "targetModuleId": "subsystem-1-0-agents",
+      "relation": "calls",
+      "summary": "calls x2",
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_function_validate_url:calls:ref_agents_researcher_py_call_isinstance:tools/web_fetch.py:74:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_agents_researcher_py_call_isinstance:tools/web_fetch.py:129:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-1-1-main-py",
+      "targetModuleId": "subsystem-1-0-agents",
+      "relation": "calls",
+      "summary": "calls x1",
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_main_py_function_main:calls:ref_agents_analyst_py_call_llm_invoke:main.py:8:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-4-0-tests",
+      "targetModuleId": "subsystem-1-0-agents",
+      "relation": "calls",
+      "summary": "calls x1",
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_agents_researcher_py_call_str:tests/test_analyst_smoke.py:21:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-4-0-tests",
+      "targetModuleId": "subsystem-1-1-main-py",
+      "relation": "calls",
+      "summary": "calls x3",
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_main_py_call_print:tests/test_analyst_smoke.py:36:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_main_py_call_print:tests/test_analyst_smoke.py:43:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_main_py_call_print:tests/test_analyst_smoke.py:46:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-7-0-tools",
+      "targetModuleId": "subsystem-1-0-agents",
+      "relation": "calls",
+      "summary": "calls x2",
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_agents_researcher_py_call_isinstance:tools/web_search.py:39:0",
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_agents_researcher_py_call_isinstance:tools/web_search.py:43:0"
+      ]
+    }
+  ],
+  "externalDependencies": [
+    {
+      "id": "external-analyst-prompt-format",
+      "name": "ANALYST_PROMPT.format",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-1-0-agents"
+      ],
+      "sourcePaths": [
+        "agents/analyst.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_analyst_prompt_format:agents/analyst.py:24:0",
+        "node:ref_agents_analyst_py_call_analyst_prompt_format"
+      ]
+    },
+    {
+      "id": "external-chatgooglegenerativeai",
+      "name": "ChatGoogleGenerativeAI",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-2-0-config-py"
+      ],
+      "sourcePaths": [
+        "llm.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_llm_py:calls:ref_llm_py_call_chatgooglegenerativeai:llm.py:23:0",
+        "node:ref_llm_py_call_chatgooglegenerativeai"
+      ]
+    },
+    {
+      "id": "external-chatgroq",
+      "name": "ChatGroq",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-2-0-config-py"
+      ],
+      "sourcePaths": [
+        "llm.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_llm_py:calls:ref_llm_py_call_chatgroq:llm.py:47:0",
+        "node:ref_llm_py_call_chatgroq"
+      ]
+    },
+    {
+      "id": "external-chatmistralai",
+      "name": "ChatMistralAI",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-2-0-config-py"
+      ],
+      "sourcePaths": [
+        "llm.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_llm_py:calls:ref_llm_py_call_chatmistralai:llm.py:35:0",
+        "node:ref_llm_py_call_chatmistralai"
+      ]
+    },
+    {
+      "id": "external-config",
+      "name": "Config",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-2-0-config-py"
+      ],
+      "sourcePaths": [
+        "tools/web_search.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tools_web_search_py:calls:ref_tools_web_search_py_call_config:tools/web_search.py:13:0",
+        "node:ref_tools_web_search_py_call_config"
+      ]
+    },
+    {
+      "id": "external-planner-prompt-format",
+      "name": "PLANNER_PROMPT.format",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-1-0-agents"
+      ],
+      "sourcePaths": [
+        "agents/planner.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_planner_py_call_planner_prompt_format:agents/planner.py:16:0",
+        "node:ref_agents_planner_py_call_planner_prompt_format"
+      ]
+    },
+    {
+      "id": "external-synthesizer-prompt-format",
+      "name": "SYNTHESIZER_PROMPT.format",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-1-0-agents"
+      ],
+      "sourcePaths": [
+        "agents/synthesizer.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_agents_synthesizer_py_function_synthesizer_agent:calls:ref_agents_synthesizer_py_call_synthesizer_prompt_format:agents/synthesizer.py:22:0",
+        "node:ref_agents_synthesizer_py_call_synthesizer_prompt_format"
+      ]
+    },
+    {
+      "id": "external-stategraph",
+      "name": "StateGraph",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-3-0-agents"
+      ],
+      "sourcePaths": [
+        "graph/research_graph.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_graph_research_graph_py:calls:ref_graph_research_graph_py_call_stategraph:graph/research_graph.py:9:0",
+        "node:ref_graph_research_graph_py_call_stategraph"
+      ]
+    },
+    {
+      "id": "external-tavilyclient",
+      "name": "TavilyClient",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-2-0-config-py"
+      ],
+      "sourcePaths": [
+        "tools/web_search.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tools_web_search_py:calls:ref_tools_web_search_py_call_tavilyclient:tools/web_search.py:18:0",
+        "node:ref_tools_web_search_py_call_tavilyclient"
+      ]
+    },
+    {
+      "id": "external-valueerror",
+      "name": "ValueError",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-2-0-config-py"
+      ],
+      "sourcePaths": [
+        "llm.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_llm_py:calls:ref_llm_py_call_valueerror:llm.py:21:0",
+        "edge:file_llm_py:calls:ref_llm_py_call_valueerror:llm.py:33:0",
+        "edge:file_llm_py:calls:ref_llm_py_call_valueerror:llm.py:45:0",
+        "edge:file_llm_py:calls:ref_llm_py_call_valueerror:llm.py:60:0",
+        "edge:file_tools_web_search_py:calls:ref_llm_py_call_valueerror:tools/web_search.py:16:0",
+        "node:ref_llm_py_call_valueerror"
+      ]
+    },
+    {
+      "id": "external-future",
+      "name": "__future__",
+      "kind": "import_reference",
+      "usedBySubsystems": [
+        "subsystem-0-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tools_web_fetch_py:imports:ref_tools_web_fetch_py_import_future:tools/web_fetch.py:9:0",
+        "node:ref_tools_web_fetch_py_import_future"
+      ]
+    },
+    {
+      "id": "external-client-search",
+      "name": "_client.search",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-7-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_search.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_tools_web_search_py_call_client_search:tools/web_search.py:32:0",
+        "node:ref_tools_web_search_py_call_client_search"
+      ]
+    },
+    {
+      "id": "external-analyst-agent",
+      "name": "analyst_agent",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-4-0-tests"
+      ],
+      "sourcePaths": [
+        "tests/test_analyst_smoke.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_tests_test_analyst_smoke_py_call_analyst_agent:tests/test_analyst_smoke.py:35:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_tests_test_analyst_smoke_py_call_analyst_agent:tests/test_analyst_smoke.py:42:0",
+        "node:ref_tests_test_analyst_smoke_py_call_analyst_agent"
+      ]
+    },
+    {
+      "id": "external-append",
+      "name": "append",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-5-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_method_textextractor_handle_data:calls:ref_tools_web_fetch_py_call_append:tools/web_fetch.py:53:0",
+        "edge:symbol_tools_web_fetch_py_method_textextractor_handle_endtag:calls:ref_tools_web_fetch_py_call_append:tools/web_fetch.py:49:0",
+        "edge:symbol_tools_web_fetch_py_method_textextractor_handle_starttag:calls:ref_tools_web_fetch_py_call_append:tools/web_fetch.py:43:0",
+        "node:ref_tools_web_fetch_py_call_append"
+      ]
+    },
+    {
+      "id": "external-bool",
+      "name": "bool",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-6-0-utils"
+      ],
+      "sourcePaths": [
+        "utils/helpers.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_utils_helpers_py_function_is_non_empty_text:calls:ref_utils_helpers_py_call_bool:utils/helpers.py:8:0",
+        "node:ref_utils_helpers_py_call_bool"
+      ]
+    },
+    {
+      "id": "external-builder-add-edge",
+      "name": "builder.add_edge",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-3-0-agents"
+      ],
+      "sourcePaths": [
+        "graph/research_graph.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_graph_research_graph_py:calls:ref_graph_research_graph_py_call_builder_add_edge:graph/research_graph.py:16:0",
+        "edge:file_graph_research_graph_py:calls:ref_graph_research_graph_py_call_builder_add_edge:graph/research_graph.py:17:0",
+        "edge:file_graph_research_graph_py:calls:ref_graph_research_graph_py_call_builder_add_edge:graph/research_graph.py:18:0",
+        "edge:file_graph_research_graph_py:calls:ref_graph_research_graph_py_call_builder_add_edge:graph/research_graph.py:19:0",
+        "edge:file_graph_research_graph_py:calls:ref_graph_research_graph_py_call_builder_add_edge:graph/research_graph.py:20:0",
+        "node:ref_graph_research_graph_py_call_builder_add_edge"
+      ]
+    },
+    {
+      "id": "external-builder-add-node",
+      "name": "builder.add_node",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-3-0-agents"
+      ],
+      "sourcePaths": [
+        "graph/research_graph.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_graph_research_graph_py:calls:ref_graph_research_graph_py_call_builder_add_node:graph/research_graph.py:11:0",
+        "edge:file_graph_research_graph_py:calls:ref_graph_research_graph_py_call_builder_add_node:graph/research_graph.py:12:0",
+        "edge:file_graph_research_graph_py:calls:ref_graph_research_graph_py_call_builder_add_node:graph/research_graph.py:13:0",
+        "edge:file_graph_research_graph_py:calls:ref_graph_research_graph_py_call_builder_add_node:graph/research_graph.py:14:0",
+        "node:ref_graph_research_graph_py_call_builder_add_node"
+      ]
+    },
+    {
+      "id": "external-cleaned-sources-append",
+      "name": "cleaned_sources.append",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-1-0-agents"
+      ],
+      "sourcePaths": [
+        "agents/researcher.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_researcher_py_call_cleaned_sources_append:agents/researcher.py:43:0",
+        "node:ref_agents_researcher_py_call_cleaned_sources_append"
+      ]
+    },
+    {
+      "id": "external-content-type-lower",
+      "name": "content_type.lower",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-0-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_content_type_lower:tools/web_fetch.py:155:0",
+        "node:ref_tools_web_fetch_py_call_content_type_lower"
+      ]
+    },
+    {
+      "id": "external-current-task-get",
+      "name": "current_task.get",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-1-0-agents"
+      ],
+      "sourcePaths": [
+        "agents/researcher.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_researcher_py_call_current_task_get:agents/researcher.py:15:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_researcher_py_call_current_task_get:agents/researcher.py:16:0",
+        "node:ref_agents_researcher_py_call_current_task_get"
+      ]
+    },
+    {
+      "id": "external-data-strip",
+      "name": "data.strip",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-5-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_method_textextractor_handle_data:calls:ref_tools_web_fetch_py_call_data_strip:tools/web_fetch.py:52:0",
+        "node:ref_tools_web_fetch_py_call_data_strip"
+      ]
+    },
+    {
+      "id": "external-dotenv",
+      "name": "dotenv",
+      "kind": "import_reference",
+      "usedBySubsystems": [
+        "subsystem-2-0-config-py"
+      ],
+      "sourcePaths": [
+        "llm.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_llm_py:imports:ref_llm_py_import_dotenv:llm.py:2:0",
+        "edge:file_tools_web_search_py:imports:ref_llm_py_import_dotenv:tools/web_search.py:6:0",
+        "node:ref_llm_py_import_dotenv"
+      ]
+    },
+    {
+      "id": "external-final-report-strip",
+      "name": "final_report.strip",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-1-0-agents"
+      ],
+      "sourcePaths": [
+        "agents/synthesizer.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_agents_synthesizer_py_function_synthesizer_agent:calls:ref_agents_synthesizer_py_call_final_report_strip:agents/synthesizer.py:34:0",
+        "edge:symbol_agents_synthesizer_py_function_synthesizer_agent:calls:ref_agents_synthesizer_py_call_final_report_strip:agents/synthesizer.py:40:0",
+        "node:ref_agents_synthesizer_py_call_final_report_strip"
+      ]
+    },
+    {
+      "id": "external-find",
+      "name": "find",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-0-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_find:tools/web_fetch.py:158:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_find:tools/web_fetch.py:161:0",
+        "node:ref_tools_web_fetch_py_call_find"
+      ]
+    },
+    {
+      "id": "external-get",
+      "name": "get",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-0-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_get:tools/web_fetch.py:154:0",
+        "node:ref_tools_web_fetch_py_call_get"
+      ]
+    },
+    {
+      "id": "external-html-find",
+      "name": "html.find",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-0-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_html_find:tools/web_fetch.py:160:0",
+        "node:ref_tools_web_fetch_py_call_html_find"
+      ]
+    },
+    {
+      "id": "external-html-lower",
+      "name": "html.lower",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-0-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_html_lower:tools/web_fetch.py:158:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_html_lower:tools/web_fetch.py:161:0",
+        "node:ref_tools_web_fetch_py_call_html_lower"
+      ]
+    },
+    {
+      "id": "external-html-parser",
+      "name": "html.parser",
+      "kind": "import_reference",
+      "usedBySubsystems": [
+        "subsystem-0-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tools_web_fetch_py:imports:ref_tools_web_fetch_py_import_html_parser:tools/web_fetch.py:13:0",
+        "node:ref_tools_web_fetch_py_import_html_parser"
+      ]
+    },
+    {
+      "id": "external-insert",
+      "name": "insert",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-4-0-tests"
+      ],
+      "sourcePaths": [
+        "tests/test_analyst_smoke.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_tests_test_analyst_smoke_py_call_insert:tests/test_analyst_smoke.py:21:0",
+        "node:ref_tests_test_analyst_smoke_py_call_insert"
+      ]
+    },
+    {
+      "id": "external-ipaddress",
+      "name": "ipaddress",
+      "kind": "import_reference",
+      "usedBySubsystems": [
+        "subsystem-0-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tools_web_fetch_py:imports:ref_tools_web_fetch_py_import_ipaddress:tools/web_fetch.py:11:0",
+        "node:ref_tools_web_fetch_py_import_ipaddress"
+      ]
+    },
+    {
+      "id": "external-ipaddress-ip-address",
+      "name": "ipaddress.ip_address",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-0-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_function_validate_url:calls:ref_tools_web_fetch_py_call_ipaddress_ip_address:tools/web_fetch.py:106:0",
+        "node:ref_tools_web_fetch_py_call_ipaddress_ip_address"
+      ]
+    },
+    {
+      "id": "external-isinstance",
+      "name": "isinstance",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-1-0-agents"
+      ],
+      "sourcePaths": [
+        "agents/researcher.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_researcher_py_call_isinstance:agents/researcher.py:14:0",
+        "edge:symbol_agents_synthesizer_py_function_synthesizer_agent:calls:ref_agents_researcher_py_call_isinstance:agents/synthesizer.py:34:0",
+        "edge:symbol_tools_web_fetch_py_function_validate_url:calls:ref_agents_researcher_py_call_isinstance:tools/web_fetch.py:74:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_agents_researcher_py_call_isinstance:tools/web_fetch.py:129:0",
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_agents_researcher_py_call_isinstance:tools/web_search.py:39:0",
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_agents_researcher_py_call_isinstance:tools/web_search.py:43:0",
+        "node:ref_agents_researcher_py_call_isinstance"
+      ]
+    },
+    {
+      "id": "external-item-get",
+      "name": "item.get",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-7-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_search.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_tools_web_search_py_call_item_get:tools/web_search.py:47:0",
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_tools_web_search_py_call_item_get:tools/web_search.py:48:0",
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_tools_web_search_py_call_item_get:tools/web_search.py:49:0",
+        "node:ref_tools_web_search_py_call_item_get"
+      ]
+    },
+    {
+      "id": "external-join",
+      "name": "join",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-5-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_method_textextractor_text:calls:ref_tools_web_fetch_py_call_join:tools/web_fetch.py:56:0",
+        "edge:symbol_tools_web_fetch_py_method_textextractor_text:calls:ref_tools_web_fetch_py_call_join:tools/web_fetch.py:58:0",
+        "node:ref_tools_web_fetch_py_call_join"
+      ]
+    },
+    {
+      "id": "external-json",
+      "name": "json",
+      "kind": "import_reference",
+      "usedBySubsystems": [
+        "subsystem-3-0-agents"
+      ],
+      "sourcePaths": [
+        "agents/analyst.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_agents_analyst_py:imports:ref_agents_analyst_py_import_json:agents/analyst.py:1:0",
+        "edge:file_agents_planner_py:imports:ref_agents_analyst_py_import_json:agents/planner.py:1:0",
+        "edge:file_tests_test_analyst_smoke_py:imports:ref_agents_analyst_py_import_json:tests/test_analyst_smoke.py:1:0",
+        "node:ref_agents_analyst_py_import_json"
+      ]
+    },
+    {
+      "id": "external-json-dumps",
+      "name": "json.dumps",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-4-0-tests"
+      ],
+      "sourcePaths": [
+        "tests/test_analyst_smoke.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tests_test_analyst_smoke_py_class_fakeresp:calls:ref_tests_test_analyst_smoke_py_call_json_dumps:tests/test_analyst_smoke.py:7:0",
+        "node:ref_tests_test_analyst_smoke_py_call_json_dumps"
+      ]
+    },
+    {
+      "id": "external-json-loads",
+      "name": "json.loads",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-1-0-agents"
+      ],
+      "sourcePaths": [
+        "agents/analyst.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_json_loads:agents/analyst.py:41:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_json_loads:agents/planner.py:28:0",
+        "node:ref_agents_analyst_py_call_json_loads"
+      ]
+    },
+    {
+      "id": "external-langchain-google-genai",
+      "name": "langchain_google_genai",
+      "kind": "import_reference",
+      "usedBySubsystems": [
+        "subsystem-2-0-config-py"
+      ],
+      "sourcePaths": [
+        "llm.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_llm_py:imports:ref_llm_py_import_langchain_google_genai:llm.py:4:0",
+        "node:ref_llm_py_import_langchain_google_genai"
+      ]
+    },
+    {
+      "id": "external-langchain-groq",
+      "name": "langchain_groq",
+      "kind": "import_reference",
+      "usedBySubsystems": [
+        "subsystem-2-0-config-py"
+      ],
+      "sourcePaths": [
+        "llm.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_llm_py:imports:ref_llm_py_import_langchain_groq:llm.py:6:0",
+        "node:ref_llm_py_import_langchain_groq"
+      ]
+    },
+    {
+      "id": "external-langchain-mistralai",
+      "name": "langchain_mistralai",
+      "kind": "import_reference",
+      "usedBySubsystems": [
+        "subsystem-2-0-config-py"
+      ],
+      "sourcePaths": [
+        "llm.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_llm_py:imports:ref_llm_py_import_langchain_mistralai:llm.py:5:0",
+        "node:ref_llm_py_import_langchain_mistralai"
+      ]
+    },
+    {
+      "id": "external-langgraph-graph",
+      "name": "langgraph.graph",
+      "kind": "import_reference",
+      "usedBySubsystems": [
+        "subsystem-3-0-agents"
+      ],
+      "sourcePaths": [
+        "graph/research_graph.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_graph_research_graph_py:imports:ref_graph_research_graph_py_import_langgraph_graph:graph/research_graph.py:1:0",
+        "node:ref_graph_research_graph_py_import_langgraph_graph"
+      ]
+    },
+    {
+      "id": "external-line-strip",
+      "name": "line.strip",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-5-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_method_textextractor_text:calls:ref_tools_web_fetch_py_call_line_strip:tools/web_fetch.py:57:0",
+        "node:ref_tools_web_fetch_py_call_line_strip"
+      ]
+    },
+    {
+      "id": "external-list",
+      "name": "list",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-1-0-agents"
+      ],
+      "sourcePaths": [
+        "agents/researcher.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_researcher_py_call_list:agents/researcher.py:66:0",
+        "node:ref_agents_researcher_py_call_list"
+      ]
+    },
+    {
+      "id": "external-llm-invoke",
+      "name": "llm.invoke",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-1-0-agents"
+      ],
+      "sourcePaths": [
+        "agents/analyst.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_llm_invoke:agents/analyst.py:36:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_llm_invoke:agents/planner.py:24:0",
+        "edge:symbol_agents_synthesizer_py_function_synthesizer_agent:calls:ref_agents_analyst_py_call_llm_invoke:agents/synthesizer.py:31:0",
+        "edge:symbol_main_py_function_main:calls:ref_agents_analyst_py_call_llm_invoke:main.py:8:0",
+        "node:ref_agents_analyst_py_call_llm_invoke"
+      ]
+    },
+    {
+      "id": "external-load-dotenv",
+      "name": "load_dotenv",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-2-0-config-py"
+      ],
+      "sourcePaths": [
+        "llm.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_llm_py:calls:ref_llm_py_call_load_dotenv:llm.py:17:0",
+        "edge:file_tools_web_search_py:calls:ref_llm_py_call_load_dotenv:tools/web_search.py:11:0",
+        "node:ref_llm_py_call_load_dotenv"
+      ]
+    },
+    {
+      "id": "external-normalized-append",
+      "name": "normalized.append",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-7-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_search.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_tools_web_search_py_call_normalized_append:tools/web_search.py:45:0",
+        "node:ref_tools_web_search_py_call_normalized_append"
+      ]
+    },
+    {
+      "id": "external-os",
+      "name": "os",
+      "kind": "import_reference",
+      "usedBySubsystems": [
+        "subsystem-2-0-config-py"
+      ],
+      "sourcePaths": [
+        "llm.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_llm_py:imports:ref_llm_py_import_os:llm.py:1:0",
+        "edge:file_tools_web_search_py:imports:ref_llm_py_import_os:tools/web_search.py:3:0",
+        "node:ref_llm_py_import_os"
+      ]
+    },
+    {
+      "id": "external-os-getenv",
+      "name": "os.getenv",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-2-0-config-py"
+      ],
+      "sourcePaths": [
+        "llm.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_llm_py:calls:ref_llm_py_call_os_getenv:llm.py:19:0",
+        "edge:file_llm_py:calls:ref_llm_py_call_os_getenv:llm.py:30:0",
+        "edge:file_llm_py:calls:ref_llm_py_call_os_getenv:llm.py:42:0",
+        "edge:file_tools_web_search_py:calls:ref_llm_py_call_os_getenv:tools/web_search.py:14:0",
+        "node:ref_llm_py_call_os_getenv"
+      ]
+    },
+    {
+      "id": "external-parser-feed",
+      "name": "parser.feed",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-0-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_function_extract_text:calls:ref_tools_web_fetch_py_call_parser_feed:tools/web_fetch.py:64:0",
+        "node:ref_tools_web_fetch_py_call_parser_feed"
+      ]
+    },
+    {
+      "id": "external-parser-text",
+      "name": "parser.text",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-0-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_function_extract_text:calls:ref_tools_web_fetch_py_call_parser_text:tools/web_fetch.py:65:0",
+        "node:ref_tools_web_fetch_py_call_parser_text"
+      ]
+    },
+    {
+      "id": "external-pathlib",
+      "name": "pathlib",
+      "kind": "import_reference",
+      "usedBySubsystems": [
+        "subsystem-4-0-tests"
+      ],
+      "sourcePaths": [
+        "tests/test_analyst_smoke.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tests_test_analyst_smoke_py:imports:ref_tests_test_analyst_smoke_py_import_pathlib:tests/test_analyst_smoke.py:1:0",
+        "node:ref_tests_test_analyst_smoke_py_import_pathlib"
+      ]
+    },
+    {
+      "id": "external-pathlib-path",
+      "name": "pathlib.Path",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-4-0-tests"
+      ],
+      "sourcePaths": [
+        "tests/test_analyst_smoke.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_tests_test_analyst_smoke_py_call_pathlib_path:tests/test_analyst_smoke.py:21:0",
+        "node:ref_tests_test_analyst_smoke_py_call_pathlib_path"
+      ]
+    },
+    {
+      "id": "external-print",
+      "name": "print",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-1-1-main-py"
+      ],
+      "sourcePaths": [
+        "main.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_main_py_call_print:tests/test_analyst_smoke.py:36:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_main_py_call_print:tests/test_analyst_smoke.py:43:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_main_py_call_print:tests/test_analyst_smoke.py:46:0",
+        "edge:symbol_main_py_function_main:calls:ref_main_py_call_print:main.py:10:0",
+        "edge:symbol_main_py_function_main:calls:ref_main_py_call_print:main.py:11:0",
+        "edge:symbol_main_py_function_main:calls:ref_main_py_call_print:main.py:5:0",
+        "edge:symbol_main_py_function_main:calls:ref_main_py_call_print:main.py:6:0",
+        "node:ref_main_py_call_print"
+      ]
+    },
+    {
+      "id": "external-query-strip",
+      "name": "query.strip",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-7-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_search.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_tools_web_search_py_call_query_strip:tools/web_search.py:27:0",
+        "node:ref_tools_web_search_py_call_query_strip"
+      ]
+    },
+    {
+      "id": "external-raw-splitlines",
+      "name": "raw.splitlines",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-5-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_method_textextractor_text:calls:ref_tools_web_fetch_py_call_raw_splitlines:tools/web_fetch.py:57:0",
+        "node:ref_tools_web_fetch_py_call_raw_splitlines"
+      ]
+    },
+    {
+      "id": "external-requests",
+      "name": "requests",
+      "kind": "import_reference",
+      "usedBySubsystems": [
+        "subsystem-0-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tools_web_fetch_py:imports:ref_tools_web_fetch_py_import_requests:tools/web_fetch.py:17:0",
+        "node:ref_tools_web_fetch_py_import_requests"
+      ]
+    },
+    {
+      "id": "external-requests-get",
+      "name": "requests.get",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-0-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_requests_get:tools/web_fetch.py:138:0",
+        "node:ref_tools_web_fetch_py_call_requests_get"
+      ]
+    },
+    {
+      "id": "external-resolve",
+      "name": "resolve",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-4-0-tests"
+      ],
+      "sourcePaths": [
+        "tests/test_analyst_smoke.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_tests_test_analyst_smoke_py_call_resolve:tests/test_analyst_smoke.py:21:0",
+        "node:ref_tests_test_analyst_smoke_py_call_resolve"
+      ]
+    },
+    {
+      "id": "external-response-get",
+      "name": "response.get",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-7-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_search.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_tools_web_search_py_call_response_get:tools/web_search.py:39:0",
+        "node:ref_tools_web_search_py_call_response_get"
+      ]
+    },
+    {
+      "id": "external-result-get",
+      "name": "result.get",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-1-0-agents"
+      ],
+      "sourcePaths": [
+        "agents/analyst.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_result_get:agents/analyst.py:49:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_result_get:agents/analyst.py:51:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_result_get:agents/analyst.py:56:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_result_get:agents/planner.py:37:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_result_get:agents/planner.py:42:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_result_get:agents/planner.py:43:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_result_get:agents/planner.py:44:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_result_get:agents/planner.py:45:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_result_get:agents/planner.py:46:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_analyst_py_call_result_get:agents/researcher.py:36:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_analyst_py_call_result_get:agents/researcher.py:37:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_analyst_py_call_result_get:agents/researcher.py:38:0",
+        "node:ref_agents_analyst_py_call_result_get"
+      ]
+    },
+    {
+      "id": "external-socket",
+      "name": "socket",
+      "kind": "import_reference",
+      "usedBySubsystems": [
+        "subsystem-0-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tools_web_fetch_py:imports:ref_tools_web_fetch_py_import_socket:tools/web_fetch.py:12:0",
+        "node:ref_tools_web_fetch_py_import_socket"
+      ]
+    },
+    {
+      "id": "external-socket-getaddrinfo",
+      "name": "socket.getaddrinfo",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-0-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_function_validate_url:calls:ref_tools_web_fetch_py_call_socket_getaddrinfo:tools/web_fetch.py:96:0",
+        "node:ref_tools_web_fetch_py_call_socket_getaddrinfo"
+      ]
+    },
+    {
+      "id": "external-startswith",
+      "name": "startswith",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-4-0-tests"
+      ],
+      "sourcePaths": [
+        "tests/test_analyst_smoke.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_tests_test_analyst_smoke_py_call_startswith:tests/test_analyst_smoke.py:37:0",
+        "node:ref_tests_test_analyst_smoke_py_call_startswith"
+      ]
+    },
+    {
+      "id": "external-state-get",
+      "name": "state.get",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-1-0-agents"
+      ],
+      "sourcePaths": [
+        "agents/analyst.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_state_get:agents/analyst.py:10:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_state_get:agents/analyst.py:11:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_state_get:agents/analyst.py:12:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_state_get:agents/analyst.py:13:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_state_get:agents/analyst.py:14:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_state_get:agents/analyst.py:15:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_state_get:agents/analyst.py:16:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_state_get:agents/planner.py:11:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_state_get:agents/planner.py:12:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_state_get:agents/planner.py:13:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_state_get:agents/planner.py:14:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_analyst_py_call_state_get:agents/researcher.py:66:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_analyst_py_call_state_get:agents/researcher.py:72:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_analyst_py_call_state_get:agents/researcher.py:73:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_analyst_py_call_state_get:agents/researcher.py:74:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_analyst_py_call_state_get:agents/researcher.py:7:0",
+        "edge:symbol_agents_synthesizer_py_function_synthesizer_agent:calls:ref_agents_analyst_py_call_state_get:agents/synthesizer.py:11:0",
+        "edge:symbol_agents_synthesizer_py_function_synthesizer_agent:calls:ref_agents_analyst_py_call_state_get:agents/synthesizer.py:12:0",
+        "edge:symbol_agents_synthesizer_py_function_synthesizer_agent:calls:ref_agents_analyst_py_call_state_get:agents/synthesizer.py:13:0",
+        "edge:symbol_agents_synthesizer_py_function_synthesizer_agent:calls:ref_agents_analyst_py_call_state_get:agents/synthesizer.py:14:0",
+        "edge:symbol_agents_synthesizer_py_function_synthesizer_agent:calls:ref_agents_analyst_py_call_state_get:agents/synthesizer.py:15:0",
+        "node:ref_agents_analyst_py_call_state_get"
+      ]
+    },
+    {
+      "id": "external-str",
+      "name": "str",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-1-0-agents"
+      ],
+      "sourcePaths": [
+        "agents/researcher.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_agents_researcher_py_call_str:tests/test_analyst_smoke.py:21:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_researcher_py_call_str:agents/researcher.py:18:0",
+        "node:ref_agents_researcher_py_call_str"
+      ]
+    },
+    {
+      "id": "external-strip",
+      "name": "strip",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-0-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_strip:tools/web_fetch.py:163:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_strip:tools/web_fetch.py:167:0",
+        "node:ref_tools_web_fetch_py_call_strip"
+      ]
+    },
+    {
+      "id": "external-super",
+      "name": "super",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-5-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_method_textextractor_init:calls:ref_tools_web_fetch_py_call_super:tools/web_fetch.py:35:0",
+        "node:ref_tools_web_fetch_py_call_super"
+      ]
+    },
+    {
+      "id": "external-sys",
+      "name": "sys",
+      "kind": "import_reference",
+      "usedBySubsystems": [
+        "subsystem-4-0-tests"
+      ],
+      "sourcePaths": [
+        "tests/test_analyst_smoke.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tests_test_analyst_smoke_py:imports:ref_tests_test_analyst_smoke_py_import_sys:tests/test_analyst_smoke.py:1:0",
+        "node:ref_tests_test_analyst_smoke_py_import_sys"
+      ]
+    },
+    {
+      "id": "external-tavily",
+      "name": "tavily",
+      "kind": "import_reference",
+      "usedBySubsystems": [
+        "subsystem-2-0-config-py"
+      ],
+      "sourcePaths": [
+        "tools/web_search.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tools_web_search_py:imports:ref_tools_web_search_py_import_tavily:tools/web_search.py:7:0",
+        "node:ref_tools_web_search_py_import_tavily"
+      ]
+    },
+    {
+      "id": "external-text-strip",
+      "name": "text.strip",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-6-0-utils"
+      ],
+      "sourcePaths": [
+        "utils/helpers.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_utils_helpers_py_function_clean_text:calls:ref_utils_helpers_py_call_text_strip:utils/helpers.py:3:0",
+        "edge:symbol_utils_helpers_py_function_is_non_empty_text:calls:ref_utils_helpers_py_call_text_strip:utils/helpers.py:8:0",
+        "node:ref_utils_helpers_py_call_text_strip"
+      ]
+    },
+    {
+      "id": "external-types",
+      "name": "types",
+      "kind": "import_reference",
+      "usedBySubsystems": [
+        "subsystem-4-0-tests"
+      ],
+      "sourcePaths": [
+        "tests/test_analyst_smoke.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tests_test_analyst_smoke_py:imports:ref_tests_test_analyst_smoke_py_import_types:tests/test_analyst_smoke.py:1:0",
+        "node:ref_tests_test_analyst_smoke_py_import_types"
+      ]
+    },
+    {
+      "id": "external-types-moduletype",
+      "name": "types.ModuleType",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-4-0-tests"
+      ],
+      "sourcePaths": [
+        "tests/test_analyst_smoke.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_tests_test_analyst_smoke_py_call_types_moduletype:tests/test_analyst_smoke.py:4:0",
+        "node:ref_tests_test_analyst_smoke_py_call_types_moduletype"
+      ]
+    },
+    {
+      "id": "external-typing",
+      "name": "typing",
+      "kind": "import_reference",
+      "usedBySubsystems": [
+        "subsystem-3-0-agents"
+      ],
+      "sourcePaths": [
+        "state.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_state_py:imports:ref_state_py_import_typing:state.py:1:0",
+        "edge:file_tools_web_fetch_py:imports:ref_state_py_import_typing:tools/web_fetch.py:14:0",
+        "edge:file_tools_web_search_py:imports:ref_state_py_import_typing:tools/web_search.py:4:0",
+        "node:ref_state_py_import_typing"
+      ]
+    },
+    {
+      "id": "external-url-strip",
+      "name": "url.strip",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-0-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_function_validate_url:calls:ref_tools_web_fetch_py_call_url_strip:tools/web_fetch.py:78:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_url_strip:tools/web_fetch.py:129:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_url_strip:tools/web_fetch.py:139:0",
+        "node:ref_tools_web_fetch_py_call_url_strip"
+      ]
+    },
+    {
+      "id": "external-urllib-parse",
+      "name": "urllib.parse",
+      "kind": "import_reference",
+      "usedBySubsystems": [
+        "subsystem-0-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tools_web_fetch_py:imports:ref_tools_web_fetch_py_import_urllib_parse:tools/web_fetch.py:15:0",
+        "node:ref_tools_web_fetch_py_import_urllib_parse"
+      ]
+    },
+    {
+      "id": "external-urlparse",
+      "name": "urlparse",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-0-0-tools"
+      ],
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_function_validate_url:calls:ref_tools_web_fetch_py_call_urlparse:tools/web_fetch.py:78:0",
+        "node:ref_tools_web_fetch_py_call_urlparse"
+      ]
+    },
+    {
+      "id": "external-web-search",
+      "name": "web_search",
+      "kind": "call_reference",
+      "usedBySubsystems": [
+        "subsystem-1-0-agents"
+      ],
+      "sourcePaths": [
+        "agents/researcher.py"
+      ],
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_researcher_py_call_web_search:agents/researcher.py:26:0",
+        "node:ref_agents_researcher_py_call_web_search"
+      ]
+    }
+  ],
+  "dependencyManifests": [
+    {
+      "path": "requirements.txt",
+      "manifestType": "python_manifest",
+      "evidence": [
+        "file:requirements.txt"
+      ]
+    }
+  ],
+  "hotspots": [
+    {
+      "moduleId": "subsystem-0-0-tools",
+      "outboundCount": 3,
+      "inboundCount": 0
+    },
+    {
+      "moduleId": "subsystem-4-0-tests",
+      "outboundCount": 3,
+      "inboundCount": 0
+    },
+    {
+      "moduleId": "subsystem-3-0-agents",
+      "outboundCount": 2,
+      "inboundCount": 3
+    },
+    {
+      "moduleId": "subsystem-2-0-config-py",
+      "outboundCount": 2,
+      "inboundCount": 2
+    },
+    {
+      "moduleId": "subsystem-1-1-main-py",
+      "outboundCount": 2,
+      "inboundCount": 1
+    },
+    {
+      "moduleId": "subsystem-7-0-tools",
+      "outboundCount": 1,
+      "inboundCount": 1
+    },
+    {
+      "moduleId": "subsystem-1-0-agents",
+      "outboundCount": 0,
+      "inboundCount": 5
+    },
+    {
+      "moduleId": "subsystem-5-0-tools",
+      "outboundCount": 0,
+      "inboundCount": 1
+    }
+  ]
+}

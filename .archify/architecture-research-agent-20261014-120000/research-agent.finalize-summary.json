@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-120000/candidate.json",
+    "sha256": "10fc8fc2ba198d72181fac168b5940e6f9838cf3263f1fcaf40e2776eb7fcf28",
+    "bytes": 6885
+  },
+  "artifact": {
+    "path": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-120000/research-agent.html"
+  },
+  "gates": {
+    "validate": "fail",
+    "deliver": "not-run",
+    "check": "not-run",
+    "browser-check": "not-run"
+  },
+  "failedStage": "validate",
+  "diagnostics": [
+    {
+      "code": "clean-flow/endpoint-side-direction",
+      "severity": "error",
+      "message": "[clean-flow/endpoint-side-direction] architecture connections[5] id \"e6\" \"synthesizer\" -> \"graph\" first segment 0 [1030, 120] -> [1030, 148] does not honor fromSide \"top\" — it must run vertical upward; keep automatic routing so the renderer can use a side-aware bridge, or set truthful fromSide/toSide with perpendicular via segments.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 5,
+        "id": "e6",
+        "from": "synthesizer",
+        "to": "graph"
+      },
+      "evidence": {
+        "endpoint": "source",
+        "authoredField": "fromSide",
+        "sideOrigin": "authored",
+        "side": "top",
+        "segmentIndex": 0,
+        "from": [
+          1030,
+          120
+        ],
+        "to": [
+          1030,
+          148
+        ],
+        "expectedAxis": "vertical",
+        "expectedDirection": "upward"
+      },
+      "supportedFixes": [
+        "keep automatic routing so the renderer can use a side-aware bridge, or set truthful fromSide/toSide with perpendicular via segments"
+      ]
+    },
+    {
+      "code": "clean-flow/edge-through-node",
+      "severity": "error",
+      "message": "[clean-flow/edge-through-node] architecture connections[5] id \"e6\" \"synthesizer\" -> \"graph\" crosses component \"planner\" (unrelated to this relationship) on segment 1 [1030, 148] -> [290, 148] (2px clearance) — if the authored route/fromSide/toSide are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust fromSide/toSide, set route/via, or move the component.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 5,
+        "id": "e6",
+        "from": "synthesizer",
+        "to": "graph"
+      },
+      "evidence": {
+        "obstacleKind": "component",
+        "obstacleId": "planner",
+        "segmentIndex": 1,
+        "from": [
+          1030,
+          148
+        ],
+        "to": [
+          290,
+          148
+        ],
+        "clearancePx": 2
+      },
+      "supportedFixes": [
+        "if the authored route/fromSide/toSide are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust fromSide/toSide, set route/via, or move the component"
+      ]
+    },
+    {
+      "code": "composition/ambiguous-corridor",
+      "severity": "error",
+      "message": "[composition/ambiguous-corridor] showcase architecture connections[8] id \"e9\" \"llm\" -> \"analyst\" shares a 19.5px corridor with connections[10] id \"e11\" \"researcher\" -> \"websearch\" at [850, 195.5] -> [850, 215] (segments 2 and 2; minimum 8px) — if the authored route/fromSide/toSide are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so distinct connections do not visually merge.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 8,
+        "id": "e9",
+        "from": "llm",
+        "to": "analyst"
+      },
+      "evidence": {
+        "otherRelationship": {
+          "diagramType": "architecture",
+          "collection": "connections",
+          "index": 10,
+          "id": "e11",
+          "from": "researcher",
+          "to": "websearch"
+        },
+        "overlapLengthPx": 19.5,
+        "minimumPx": 8,
+        "from": [
+          850,
+          195.5
+        ],
+        "to": [
+          850,
+          215
+        ],
+        "segmentIndex": 2,
+        "otherSegmentIndex": 2
+      },
+      "supportedFixes": [
+        "if the authored route/fromSide/toSide are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so distinct connections do not visually merge"
+      ]
+    },
+    {
+      "code": "composition/label-route-clearance",
+      "severity": "error",
+      "message": "[composition/label-route-clearance] showcase architecture label \"llm.invoke\" on connections[9] id \"e10\" \"llm\" -> \"synthesizer\" label \"llm.invoke\" is 0px from connections[8] id \"e9\" \"llm\" -> \"analyst\" label \"llm.invoke\" segment 2 [850, 238] -> [850, 176] (label rect [816, 218, 58, 14]; minimum 4px) — if the authored route/fromSide/toSide are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 9,
+        "id": "e10",
+        "from": "llm",
+        "to": "synthesizer"
+      },
+      "evidence": {
+        "label": "llm.invoke",
+        "otherRelationship": {
+          "diagramType": "architecture",
+          "collection": "connections",
+          "index": 8,
+          "id": "e9",
+          "from": "llm",
+          "to": "analyst"
+        },
+        "segmentIndex": 2,
+        "clearancePx": 0,
+        "minimumPx": 4,
+        "labelRect": {
+          "relation": {
+            "id": "e10",
+            "from": "llm",
+            "to": "synthesizer",
+            "label": "llm.invoke",
+            "variant": "dashed",
+            "fromSide": "top",
+            "toSide": "bottom",
+            "route": "orthogonal-v"
+          },
+          "relationIndex": 9,
+          "label": "llm.invoke",
+          "x": 816,
+          "y": 218,
+          "width": 58,
+          "height": 14,
+          "lx": 845,
+          "ly": 228
+        },
+        "from": [
+          850,
+          238
+        ],
+        "to": [
+          850,
+          176
+        ]
+      },
+      "supportedFixes": [
+        "if the authored route/fromSide/toSide are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust labelAt, labelDx, labelDy, or labelSegment; otherwise adjust the other relationship route/via/channel"
+      ]
+    },
+    {
+      "code": "layout/constraint",
+      "severity": "error",
+      "message": "Label \"START → planner\" overlaps component \"graph\" — adjust labelDx/labelDy/labelSegment or set labelAt.\n  label rect: [339, 128, 82, 14]\n  component \"graph\" rect: [220, 120, 140, 56]\n  Suggested fix: set labelAt [380, 190] or set labelDy 52 (below); or set labelAt [380, 112] or set labelDy -26 (above)",
+      "subject": {
+        "diagramType": "architecture"
+      }
+    },
+    {
+      "code": "clean-flow/edge-through-node",
+      "severity": "error",
+      "message": "[clean-flow/edge-through-node] architecture connections[8] id \"e9\" \"llm\" -> \"analyst\" crosses component \"websearch\" (unrelated to this relationship) on segment 1 [660, 238] -> [850, 238] (2px clearance) — if the authored route/fromSide/toSide are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust fromSide/toSide, set route/via, or move the component.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 8,
+        "id": "e9",
+        "from": "llm",
+        "to": "analyst"
+      },
+      "evidence": {
+        "obstacleKind": "component",
+        "obstacleId": "websearch",
+        "segmentIndex": 1,
+        "from": [
+          660,
+          238
+        ],
+        "to": [
+          850,
+          238
+        ],
+        "clearancePx": 2
+      },
+      "supportedFixes": [
+        "if the authored route/fromSide/toSide are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust fromSide/toSide, set route/via, or move the component"
+      ]
+    },
+    {
+      "code": "clean-flow/edge-through-node",
+      "severity": "error",
+      "message": "[clean-flow/edge-through-node] architecture connections[9] id \"e10\" \"llm\" -> \"synthesizer\" crosses component \"websearch\" (unrelated to this relationship) on segment 1 [660, 238] -> [1030, 238] (2px clearance) — if the authored route/fromSide/toSide are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust fromSide/toSide, set route/via, or move the component.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 9,
+        "id": "e10",
+        "from": "llm",
+        "to": "synthesizer"
+      },
+      "evidence": {
+        "obstacleKind": "component",
+        "obstacleId": "websearch",
+        "segmentIndex": 1,
+        "from": [
+          660,
+          238
+        ],
+        "to": [
+          1030,
+          238
+        ],
+        "clearancePx": 2
+      },
+      "supportedFixes": [
+        "if the authored route/fromSide/toSide are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust fromSide/toSide, set route/via, or move the component"
+      ]
+    },
+    {
+      "code": "clean-flow/endpoint-side-direction",
+      "severity": "error",
+      "message": "[clean-flow/endpoint-side-direction] architecture connections[5] id \"e6\" \"synthesizer\" -> \"graph\" final segment 2 [290, 148] -> [290, 176] does not honor toSide \"bottom\" — it must run vertical upward from below; keep automatic routing so the renderer can use a side-aware bridge, or set truthful fromSide/toSide with perpendicular via segments.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 5,
+        "id": "e6",
+        "from": "synthesizer",
+        "to": "graph"
+      },
+      "evidence": {
+        "endpoint": "target",
+        "authoredField": "toSide",
+        "sideOrigin": "authored",
+        "side": "bottom",
+        "segmentIndex": 2,
+        "from": [
+          290,
+          148
+        ],
+        "to": [
+          290,
+          176
+        ],
+        "expectedAxis": "vertical",
+        "expectedDirection": "upward from below"
+      },
+      "supportedFixes": [
+        "keep automatic routing so the renderer can use a side-aware bridge, or set truthful fromSide/toSide with perpendicular via segments"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 21,
+    "shown": 8,
+    "truncated": true
+  },
+  "evidence": {
+    "receipt": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-120000/research-agent.finalize.json",
+    "summaryReceipt": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-120000/research-agent.finalize-summary.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.0.1",
+    "availableVersion": "3.0.1",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-13T14:28:31.400Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 228,
+  "nextAction": {
+    "action": "edit-in-place",
+    "candidate": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-120000/candidate.json",
+    "constraint": "Preserve all semantics and user-fixed geometry. Use references/architecture-layout-repair.md to choose a local repair or connected-scene reflow; edit the existing candidate.",
+    "then": "finalize-once"
+  }
+}

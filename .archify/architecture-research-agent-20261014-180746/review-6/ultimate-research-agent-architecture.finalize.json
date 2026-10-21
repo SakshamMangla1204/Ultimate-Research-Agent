@@ -1,0 +1,401 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "startedAt": "2026-10-14T09:42:06.895Z",
+  "specification": {
+    "path": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/candidate.json",
+    "sha256": "1baec5aab0a7310d0858de579f76ecc0bea05128d6ab9e7f8d5309f9a63c2802",
+    "bytes": 8454
+  },
+  "artifact": {
+    "path": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/ultimate-research-agent-architecture.html",
+    "sha256": "22c26da1cd8c4859ab764b16de58d8c9571f1538815c5c6ead999b033ad0067b",
+    "bytes": 835894
+  },
+  "stages": {
+    "validate": {
+      "status": "fail",
+      "exitCode": 1,
+      "durationMs": null,
+      "command": [
+        "/usr/local/bin/node",
+        "/Users/sakshammangla/.agents/skills/archify/bin/archify.mjs",
+        "deliver",
+        "architecture",
+        "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/candidate.json",
+        "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/ultimate-research-agent-architecture.html",
+        "--quality",
+        "showcase",
+        "--repo-root",
+        "/Users/sakshammangla/Documents/General Research agent",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": false,
+        "command": "deliver",
+        "receiptId": "f9e1090a-831b-4c5d-8c7d-f7a4d9ce302e",
+        "stage": "render",
+        "type": "architecture",
+        "input": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/candidate.json",
+        "output": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/ultimate-research-agent-architecture.html",
+        "error": "Architecture layout validation failed:\n- Component \"tavily\" is not wrapped by boundary \"LangGraph research pipeline\" but sits inside its frame — move it outside the frame, place the wrapped members in one compact axis-aligned cluster (no empty bay for a non-member), or add it to wraps only when it truly belongs there.\n- Component \"web_fetch\" is not wrapped by boundary \"LangGraph research pipeline\" but sits inside its frame — move it outside the frame, place the wrapped members in one compact axis-aligned cluster (no empty bay for a non-member), or add it to wraps only when it truly belongs there.\n- [composition/proper-crossing] showcase architecture connections[6] id \"synthesizer-to-end\" \"synthesizer\" -> \"graph_orchestrator\" crosses connections[8] id \"planner-to-llm\" \"planner\" -> \"llm_selector\" at [666, 460] (segments 3 and 1) — if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors.\n- [composition/proper-crossing] showcase architecture connections[6] id \"synthesizer-to-end\" \"synthesizer\" -> \"graph_orchestrator\" crosses connections[9] id \"analyst-to-llm\" \"analyst\" -> \"llm_selector\" at [854, 526.9] (segments 0 and 1) — if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors.",
+        "diagnostics": [
+          {
+            "code": "composition/proper-crossing",
+            "severity": "error",
+            "message": "[composition/proper-crossing] showcase architecture connections[6] id \"synthesizer-to-end\" \"synthesizer\" -> \"graph_orchestrator\" crosses connections[8] id \"planner-to-llm\" \"planner\" -> \"llm_selector\" at [666, 460] (segments 3 and 1) — if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors.",
+            "subject": {
+              "diagramType": "architecture",
+              "collection": "connections",
+              "index": 6,
+              "id": "synthesizer-to-end",
+              "from": "synthesizer",
+              "to": "graph_orchestrator"
+            },
+            "evidence": {
+              "otherRelationship": {
+                "diagramType": "architecture",
+                "collection": "connections",
+                "index": 8,
+                "id": "planner-to-llm",
+                "from": "planner",
+                "to": "llm_selector"
+              },
+              "point": [
+                665.9999999999999,
+                460
+              ],
+              "segmentIndex": 3,
+              "otherSegmentIndex": 1
+            },
+            "supportedFixes": [
+              "if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors"
+            ]
+          },
+          {
+            "code": "composition/proper-crossing",
+            "severity": "error",
+            "message": "[composition/proper-crossing] showcase architecture connections[6] id \"synthesizer-to-end\" \"synthesizer\" -> \"graph_orchestrator\" crosses connections[9] id \"analyst-to-llm\" \"analyst\" -> \"llm_selector\" at [854, 526.9] (segments 0 and 1) — if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors.",
+            "subject": {
+              "diagramType": "architecture",
+              "collection": "connections",
+              "index": 6,
+              "id": "synthesizer-to-end",
+              "from": "synthesizer",
+              "to": "graph_orchestrator"
+            },
+            "evidence": {
+              "otherRelationship": {
+                "diagramType": "architecture",
+                "collection": "connections",
+                "index": 9,
+                "id": "analyst-to-llm",
+                "from": "analyst",
+                "to": "llm_selector"
+              },
+              "point": [
+                854,
+                526.9090909090909
+              ],
+              "segmentIndex": 0,
+              "otherSegmentIndex": 1
+            },
+            "supportedFixes": [
+              "if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors"
+            ]
+          },
+          {
+            "code": "layout/boundary-encloses-non-member",
+            "severity": "error",
+            "message": "Component \"tavily\" is not wrapped by boundary \"LangGraph research pipeline\" but sits inside its frame — move it outside the frame, place the wrapped members in one compact axis-aligned cluster (no empty bay for a non-member), or add it to wraps only when it truly belongs there.",
+            "subject": {
+              "diagramType": "architecture",
+              "boundary": {
+                "kind": "region",
+                "label": "LangGraph research pipeline",
+                "wraps": [
+                  "graph_orchestrator",
+                  "research_state",
+                  "planner",
+                  "researcher",
+                  "analyst",
+                  "synthesizer"
+                ]
+              },
+              "component": "tavily"
+            },
+            "evidence": {
+              "bounds": {
+                "x": 398,
+                "y": 46,
+                "width": 724,
+                "height": 518
+              },
+              "component": {
+                "id": "tavily",
+                "type": "external",
+                "label": "Tavily Search",
+                "x": 960,
+                "y": 280,
+                "width": 140,
+                "height": 64,
+                "pos": [
+                  960,
+                  280
+                ]
+              }
+            },
+            "supportedFixes": [
+              "move \"tavily\" outside the boundary frame",
+              "reposition the wrapped members into one compact axis-aligned cluster (no empty bay) that leaves non-members outside"
+            ]
+          },
+          {
+            "code": "layout/boundary-encloses-non-member",
+            "severity": "error",
+            "message": "Component \"web_fetch\" is not wrapped by boundary \"LangGraph research pipeline\" but sits inside its frame — move it outside the frame, place the wrapped members in one compact axis-aligned cluster (no empty bay for a non-member), or add it to wraps only when it truly belongs there.",
+            "subject": {
+              "diagramType": "architecture",
+              "boundary": {
+                "kind": "region",
+                "label": "LangGraph research pipeline",
+                "wraps": [
+                  "graph_orchestrator",
+                  "research_state",
+                  "planner",
+                  "researcher",
+                  "analyst",
+                  "synthesizer"
+                ]
+              },
+              "component": "web_fetch"
+            },
+            "evidence": {
+              "bounds": {
+                "x": 398,
+                "y": 46,
+                "width": 724,
+                "height": 518
+              },
+              "component": {
+                "id": "web_fetch",
+                "type": "external",
+                "label": "Web Fetch",
+                "x": 960,
+                "y": 500,
+                "width": 140,
+                "height": 64,
+                "pos": [
+                  960,
+                  500
+                ]
+              }
+            },
+            "supportedFixes": [
+              "move \"web_fetch\" outside the boundary frame",
+              "reposition the wrapped members into one compact axis-aligned cluster (no empty bay) that leaves non-members outside"
+            ]
+          }
+        ],
+        "provenance": "failed",
+        "update": {
+          "status": "unavailable",
+          "installedVersion": null,
+          "availableVersion": null,
+          "releaseNotes": null,
+          "checkedAt": null,
+          "source": null,
+          "noticeRequired": false,
+          "noticeText": null,
+          "reason": "disabled"
+        }
+      },
+      "execution": "embedded-in-deliver"
+    },
+    "deliver": {
+      "status": "not-run",
+      "execution": "blocked-by-validate"
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "composition/proper-crossing",
+      "severity": "error",
+      "message": "[composition/proper-crossing] showcase architecture connections[6] id \"synthesizer-to-end\" \"synthesizer\" -> \"graph_orchestrator\" crosses connections[8] id \"planner-to-llm\" \"planner\" -> \"llm_selector\" at [666, 460] (segments 3 and 1) — if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 6,
+        "id": "synthesizer-to-end",
+        "from": "synthesizer",
+        "to": "graph_orchestrator"
+      },
+      "evidence": {
+        "otherRelationship": {
+          "diagramType": "architecture",
+          "collection": "connections",
+          "index": 8,
+          "id": "planner-to-llm",
+          "from": "planner",
+          "to": "llm_selector"
+        },
+        "point": [
+          665.9999999999999,
+          460
+        ],
+        "segmentIndex": 3,
+        "otherSegmentIndex": 1
+      },
+      "supportedFixes": [
+        "if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors"
+      ]
+    },
+    {
+      "code": "composition/proper-crossing",
+      "severity": "error",
+      "message": "[composition/proper-crossing] showcase architecture connections[6] id \"synthesizer-to-end\" \"synthesizer\" -> \"graph_orchestrator\" crosses connections[9] id \"analyst-to-llm\" \"analyst\" -> \"llm_selector\" at [854, 526.9] (segments 0 and 1) — if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors.",
+      "subject": {
+        "diagramType": "architecture",
+        "collection": "connections",
+        "index": 6,
+        "id": "synthesizer-to-end",
+        "from": "synthesizer",
+        "to": "graph_orchestrator"
+      },
+      "evidence": {
+        "otherRelationship": {
+          "diagramType": "architecture",
+          "collection": "connections",
+          "index": 9,
+          "id": "analyst-to-llm",
+          "from": "analyst",
+          "to": "llm_selector"
+        },
+        "point": [
+          854,
+          526.9090909090909
+        ],
+        "segmentIndex": 0,
+        "otherSegmentIndex": 1
+      },
+      "supportedFixes": [
+        "if the authored via are not required by the user, remove them so the renderer can re-plan; otherwise preserve that intent and adjust route/via or fromSide/toSide so the connections use separate corridors"
+      ]
+    },
+    {
+      "code": "layout/boundary-encloses-non-member",
+      "severity": "error",
+      "message": "Component \"tavily\" is not wrapped by boundary \"LangGraph research pipeline\" but sits inside its frame — move it outside the frame, place the wrapped members in one compact axis-aligned cluster (no empty bay for a non-member), or add it to wraps only when it truly belongs there.",
+      "subject": {
+        "diagramType": "architecture",
+        "boundary": {
+          "kind": "region",
+          "label": "LangGraph research pipeline",
+          "wraps": [
+            "graph_orchestrator",
+            "research_state",
+            "planner",
+            "researcher",
+            "analyst",
+            "synthesizer"
+          ]
+        },
+        "component": "tavily"
+      },
+      "evidence": {
+        "bounds": {
+          "x": 398,
+          "y": 46,
+          "width": 724,
+          "height": 518
+        },
+        "component": {
+          "id": "tavily",
+          "type": "external",
+          "label": "Tavily Search",
+          "x": 960,
+          "y": 280,
+          "width": 140,
+          "height": 64,
+          "pos": [
+            960,
+            280
+          ]
+        }
+      },
+      "supportedFixes": [
+        "move \"tavily\" outside the boundary frame",
+        "reposition the wrapped members into one compact axis-aligned cluster (no empty bay) that leaves non-members outside"
+      ]
+    },
+    {
+      "code": "layout/boundary-encloses-non-member",
+      "severity": "error",
+      "message": "Component \"web_fetch\" is not wrapped by boundary \"LangGraph research pipeline\" but sits inside its frame — move it outside the frame, place the wrapped members in one compact axis-aligned cluster (no empty bay for a non-member), or add it to wraps only when it truly belongs there.",
+      "subject": {
+        "diagramType": "architecture",
+        "boundary": {
+          "kind": "region",
+          "label": "LangGraph research pipeline",
+          "wraps": [
+            "graph_orchestrator",
+            "research_state",
+            "planner",
+            "researcher",
+            "analyst",
+            "synthesizer"
+          ]
+        },
+        "component": "web_fetch"
+      },
+      "evidence": {
+        "bounds": {
+          "x": 398,
+          "y": 46,
+          "width": 724,
+          "height": 518
+        },
+        "component": {
+          "id": "web_fetch",
+          "type": "external",
+          "label": "Web Fetch",
+          "x": 960,
+          "y": 500,
+          "width": 140,
+          "height": 64,
+          "pos": [
+            960,
+            500
+          ]
+        }
+      },
+      "supportedFixes": [
+        "move \"web_fetch\" outside the boundary frame",
+        "reposition the wrapped members into one compact axis-aligned cluster (no empty bay) that leaves non-members outside"
+      ]
+    }
+  ],
+  "evidence": {
+    "receipt": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/review-6/ultimate-research-agent-architecture.finalize.json",
+    "summaryReceipt": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/review-6/ultimate-research-agent-architecture.finalize-summary.json"
+  },
+  "visualReview": "not-requested",
+  "failedStage": "validate",
+  "finishedAt": "2026-10-14T09:42:07.166Z",
+  "durationMs": 271,
+  "update": {
+    "status": "current",
+    "installedVersion": "3.1.0",
+    "availableVersion": "3.1.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-14T09:26:39.765Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  }
+}

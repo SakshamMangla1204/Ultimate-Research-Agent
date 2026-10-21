@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "startedAt": "2026-10-14T09:42:31.544Z",
+  "specification": {
+    "path": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/candidate.json",
+    "sha256": "a2c89e861bea9d1b1632e2ff6c58544bc292626acd5990a1e6ce9dd3cbb41664",
+    "bytes": 8394
+  },
+  "artifact": {
+    "path": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/ultimate-research-agent-architecture.html",
+    "sha256": "22c26da1cd8c4859ab764b16de58d8c9571f1538815c5c6ead999b033ad0067b",
+    "bytes": 835894
+  },
+  "stages": {
+    "validate": {
+      "status": "fail",
+      "exitCode": 1,
+      "durationMs": null,
+      "command": [
+        "/usr/local/bin/node",
+        "/Users/sakshammangla/.agents/skills/archify/bin/archify.mjs",
+        "deliver",
+        "architecture",
+        "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/candidate.json",
+        "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/ultimate-research-agent-architecture.html",
+        "--quality",
+        "showcase",
+        "--repo-root",
+        "/Users/sakshammangla/Documents/General Research agent",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": false,
+        "command": "deliver",
+        "receiptId": "c9e19374-98b8-4df5-a26a-763f4845a9b6",
+        "stage": "input",
+        "type": "architecture",
+        "input": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/candidate.json",
+        "output": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/ultimate-research-agent-architecture.html",
+        "error": "Could not read delivery input \"/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/candidate.json\": Expected double-quoted property name in JSON at position 6561 (line 221 column 5)",
+        "diagnostics": [
+          {
+            "code": "input/json-parse",
+            "severity": "error",
+            "message": "Input JSON could not be parsed: Expected double-quoted property name in JSON at position 6561 (line 221 column 5)",
+            "subject": {
+              "input": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/candidate.json"
+            },
+            "evidence": {
+              "reason": "Expected double-quoted property name in JSON at position 6561 (line 221 column 5)"
+            },
+            "supportedFixes": [
+              "repair the JSON syntax and run validation again"
+            ]
+          }
+        ],
+        "provenance": "failed"
+      },
+      "execution": "embedded-in-deliver"
+    },
+    "deliver": {
+      "status": "not-run",
+      "execution": "blocked-by-validate"
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "input/json-parse",
+      "severity": "error",
+      "message": "Input JSON could not be parsed: Expected double-quoted property name in JSON at position 6561 (line 221 column 5)",
+      "subject": {
+        "input": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/candidate.json"
+      },
+      "evidence": {
+        "reason": "Expected double-quoted property name in JSON at position 6561 (line 221 column 5)"
+      },
+      "supportedFixes": [
+        "repair the JSON syntax and run validation again"
+      ]
+    }
+  ],
+  "evidence": {
+    "receipt": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/review-8/ultimate-research-agent-architecture.finalize.json",
+    "summaryReceipt": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/review-8/ultimate-research-agent-architecture.finalize-summary.json"
+  },
+  "visualReview": "not-requested",
+  "failedStage": "validate",
+  "finishedAt": "2026-10-14T09:42:31.622Z",
+  "durationMs": 77,
+  "update": {
+    "status": "current",
+    "installedVersion": "3.1.0",
+    "availableVersion": "3.1.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-14T09:26:39.765Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  }
+}

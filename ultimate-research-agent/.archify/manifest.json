@@ -1,0 +1,770 @@
+{
+  "artifact": "manifest.json",
+  "status": "ready",
+  "phase": "analyze",
+  "manifestVersion": 2,
+  "graphArtifactVersion": 2,
+  "generatedAt": "2026-10-14T08:55:13.687341+00:00",
+  "targetPath": "/Users/sakshammangla/Documents/General Research agent/ultimate-research-agent",
+  "scanRoot": ".",
+  "semanticEnabled": false,
+  "semanticConfigFingerprint": "{\"detect\":{\"excludeGlobs\":[],\"followSymlinks\":false,\"includeGlobs\":[],\"includeHidden\":false,\"maxFileSizeBytes\":1048576},\"languageScope\":{\"exclude\":[],\"include\":[]},\"semantic\":{\"backend\":\"none\",\"enabled\":false,\"includeExtensions\":[\".md\",\".mdx\",\".txt\",\".rst\"],\"includeFileTypes\":[\"document\"],\"maxChunkBytes\":8192,\"maxChunksPerDocument\":32,\"maxDocumentBytes\":262144,\"mode\":\"docs_first\"},\"sourceRoot\":\".\"}",
+  "mode": "full",
+  "incremental": {
+    "incrementalEligible": false,
+    "new_or_changed_files": [
+      "agents/__init__.py",
+      "agents/analyst.py",
+      "agents/planner.py",
+      "agents/request_handler.py",
+      "agents/researcher.py",
+      "agents/synthesizer.py",
+      "config.py",
+      "graph/__init__.py",
+      "graph/research_graph.py",
+      "llm.py",
+      "logger.py",
+      "main.py",
+      "prompts/__init__.py",
+      "prompts/analyst.py",
+      "prompts/planner.py",
+      "prompts/request_handler.py",
+      "prompts/researcher.py",
+      "prompts/synthesizer.py",
+      "requirements.txt",
+      "state.py",
+      "tests/test_analyst_smoke.py",
+      "tools/__init__.py",
+      "tools/web_fetch.py",
+      "tools/web_search.py",
+      "utils/__init__.py",
+      "utils/helpers.py"
+    ],
+    "unchanged_files": [],
+    "deleted_files": [],
+    "changed_code_files": [
+      "agents/__init__.py",
+      "agents/analyst.py",
+      "agents/planner.py",
+      "agents/request_handler.py",
+      "agents/researcher.py",
+      "agents/synthesizer.py",
+      "config.py",
+      "graph/__init__.py",
+      "graph/research_graph.py",
+      "llm.py",
+      "logger.py",
+      "main.py",
+      "prompts/__init__.py",
+      "prompts/analyst.py",
+      "prompts/planner.py",
+      "prompts/request_handler.py",
+      "prompts/researcher.py",
+      "prompts/synthesizer.py",
+      "state.py",
+      "tests/test_analyst_smoke.py",
+      "tools/__init__.py",
+      "tools/web_fetch.py",
+      "tools/web_search.py",
+      "utils/__init__.py",
+      "utils/helpers.py"
+    ],
+    "changed_semantic_files": [],
+    "reused_code_files": [],
+    "reused_semantic_files": [],
+    "changedFileCount": 26,
+    "deletedFileCount": 0,
+    "reusedFileCount": 0,
+    "fallbackReason": "missing_prior_state",
+    "semanticSkipped": false
+  },
+  "staleLockRecovered": null,
+  "graphSummary": {
+    "nodeCount": 127,
+    "edgeCount": 211,
+    "hyperedgeCount": 0,
+    "communityCount": 16,
+    "warningCount": 0
+  },
+  "dedupSummary": {
+    "duplicateNodeCount": 23,
+    "duplicateNodeIdCount": 0,
+    "duplicateEdgeCount": 0,
+    "mergedLabelGroupCount": 14,
+    "mergedLabelGroups": [
+      {
+        "label": "dotenv",
+        "survivor": "ref_llm_py_import_dotenv",
+        "merged": [
+          "ref_tools_web_search_py_import_dotenv"
+        ]
+      },
+      {
+        "label": "isinstance",
+        "survivor": "ref_agents_researcher_py_call_isinstance",
+        "merged": [
+          "ref_agents_synthesizer_py_call_isinstance",
+          "ref_tools_web_fetch_py_call_isinstance",
+          "ref_tools_web_search_py_call_isinstance"
+        ]
+      },
+      {
+        "label": "json",
+        "survivor": "ref_agents_analyst_py_import_json",
+        "merged": [
+          "ref_agents_planner_py_import_json",
+          "ref_tests_test_analyst_smoke_py_import_json"
+        ]
+      },
+      {
+        "label": "json loads",
+        "survivor": "ref_agents_analyst_py_call_json_loads",
+        "merged": [
+          "ref_agents_planner_py_call_json_loads"
+        ]
+      },
+      {
+        "label": "llm invoke",
+        "survivor": "ref_agents_analyst_py_call_llm_invoke",
+        "merged": [
+          "ref_agents_planner_py_call_llm_invoke",
+          "ref_agents_synthesizer_py_call_llm_invoke",
+          "ref_main_py_call_llm_invoke"
+        ]
+      },
+      {
+        "label": "load dotenv",
+        "survivor": "ref_llm_py_call_load_dotenv",
+        "merged": [
+          "ref_tools_web_search_py_call_load_dotenv"
+        ]
+      },
+      {
+        "label": "os",
+        "survivor": "ref_llm_py_import_os",
+        "merged": [
+          "ref_tools_web_search_py_import_os"
+        ]
+      },
+      {
+        "label": "os getenv",
+        "survivor": "ref_llm_py_call_os_getenv",
+        "merged": [
+          "ref_tools_web_search_py_call_os_getenv"
+        ]
+      },
+      {
+        "label": "print",
+        "survivor": "ref_main_py_call_print",
+        "merged": [
+          "ref_tests_test_analyst_smoke_py_call_print"
+        ]
+      },
+      {
+        "label": "result get",
+        "survivor": "ref_agents_analyst_py_call_result_get",
+        "merged": [
+          "ref_agents_planner_py_call_result_get",
+          "ref_agents_researcher_py_call_result_get"
+        ]
+      },
+      {
+        "label": "state get",
+        "survivor": "ref_agents_analyst_py_call_state_get",
+        "merged": [
+          "ref_agents_planner_py_call_state_get",
+          "ref_agents_researcher_py_call_state_get",
+          "ref_agents_synthesizer_py_call_state_get"
+        ]
+      },
+      {
+        "label": "str",
+        "survivor": "ref_agents_researcher_py_call_str",
+        "merged": [
+          "ref_tests_test_analyst_smoke_py_call_str"
+        ]
+      },
+      {
+        "label": "typing",
+        "survivor": "ref_state_py_import_typing",
+        "merged": [
+          "ref_tools_web_fetch_py_import_typing",
+          "ref_tools_web_search_py_import_typing"
+        ]
+      },
+      {
+        "label": "valueerror",
+        "survivor": "ref_llm_py_call_valueerror",
+        "merged": [
+          "ref_tools_web_search_py_call_valueerror"
+        ]
+      }
+    ],
+    "droppedSelfLoopCount": 1
+  },
+  "clusteringSummary": {
+    "backend": "networkx_louvain",
+    "usedFallback": false,
+    "communityCount": 16,
+    "isolateCount": 8,
+    "maxCommunitySize": 23
+  },
+  "analysisSummary": {
+    "godNodeCount": 10,
+    "surprisingConnectionCount": 5,
+    "suggestedQuestionCount": 5,
+    "ambiguousEdgeCount": 135
+  },
+  "semanticSummary": {
+    "enabled": false,
+    "mode": "docs_first",
+    "backend": "none",
+    "providerEnrichmentSkipped": true,
+    "selectedDocumentCount": 0,
+    "processedDocumentCount": 0,
+    "skippedDocumentCount": 0,
+    "nodeCount": 0,
+    "edgeCount": 0,
+    "hyperedgeCount": 0,
+    "warningCount": 0
+  },
+  "architectureContextSummary": {
+    "subsystemCount": 17,
+    "interfaceCount": 11,
+    "dataFlowCount": 13,
+    "crossCuttingConcernCount": 0,
+    "entrypointCount": 9,
+    "externalDependencyCount": 77,
+    "openQuestionCount": 12,
+    "docEvidenceSubsystemCount": 0,
+    "processedDocumentCount": 0
+  },
+  "files": {
+    "config.py": {
+      "mtime": 1790678807.2613363,
+      "sizeBytes": 991,
+      "hash": "0e473576f770ab3e6f6ecb51f638655eb18da03a092a91aacc9ac266e5ddac11",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 3,
+        "edgeCount": 2,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "llm.py": {
+      "mtime": 1790678929.9238474,
+      "sizeBytes": 1253,
+      "hash": "b1de304e5edc47a0a05e33f62e9c03ef587bb71271585e37e47b8a4ced394923",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 13,
+        "edgeCount": 17,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "logger.py": {
+      "mtime": 1786481668.4126065,
+      "sizeBytes": 0,
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 1,
+        "edgeCount": 0,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "main.py": {
+      "mtime": 1786681615.8210351,
+      "sizeBytes": 268,
+      "hash": "078bb95e6e20867d53e92388074563b8d8d49f26bd378a115b02c4ab2b7f2dfd",
+      "fileType": "code",
+      "architectureTags": [
+        "entrypoint"
+      ],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 5,
+        "edgeCount": 8,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "requirements.txt": {
+      "mtime": 1790678967.74852,
+      "sizeBytes": 193,
+      "hash": "8cd2ec868d1b379462caa96db8257f3c113fd9d262c2c74bd03eb44bd3f1da84",
+      "fileType": "config",
+      "architectureTags": [
+        "dependency_manifest"
+      ],
+      "extraction": {
+        "language": null,
+        "status": "skipped",
+        "nodeCount": 0,
+        "edgeCount": 0,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "state.py": {
+      "mtime": 1791448844.834704,
+      "sizeBytes": 761,
+      "hash": "7770d3f788d7db18d3ce18126b8157fc4b91bc999b697061de09ff44f5383182",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 3,
+        "edgeCount": 2,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "tools/__init__.py": {
+      "mtime": 1786481668.4130454,
+      "sizeBytes": 0,
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 1,
+        "edgeCount": 0,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "tools/web_fetch.py": {
+      "mtime": 1791786720.4024348,
+      "sizeBytes": 5032,
+      "hash": "5bbd759d9de6754c2ff241aebe15052adf16b31b3bcdf398375d86e911b060a0",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 37,
+        "edgeCount": 49,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "tools/web_search.py": {
+      "mtime": 1790840185.1436398,
+      "sizeBytes": 1337,
+      "hash": "016fcbae372ee0e7bcdb4a69165819f813b38954036838eabec8fc6e42401c3f",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 18,
+        "edgeCount": 20,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "graph/__init__.py": {
+      "mtime": 1786481668.4133296,
+      "sizeBytes": 0,
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 1,
+        "edgeCount": 0,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "graph/research_graph.py": {
+      "mtime": 1786978404.896181,
+      "sizeBytes": 673,
+      "hash": "ce92f030bccbdfe2b1bd1a048420c788a95a2e97902d46cb04d87440dc7e5473",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 10,
+        "edgeCount": 16,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "tests/test_analyst_smoke.py": {
+      "mtime": 1791448901.7775326,
+      "sizeBytes": 1493,
+      "hash": "109877452c8499f2dd9bebff5c9279babfebdf8f7a4ae11f856c573c1151bd9c",
+      "fileType": "code",
+      "architectureTags": [
+        "test"
+      ],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 18,
+        "edgeCount": 22,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "agents/__init__.py": {
+      "mtime": 1786481668.4128532,
+      "sizeBytes": 0,
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 1,
+        "edgeCount": 0,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "agents/analyst.py": {
+      "mtime": 1791448841.3157275,
+      "sizeBytes": 1595,
+      "hash": "09f779ef0c448bebdc183ff34f44b43f72d41d54b5a14360b14ad3e811e9a46f",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 11,
+        "edgeCount": 18,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "agents/planner.py": {
+      "mtime": 1790829991.351421,
+      "sizeBytes": 1452,
+      "hash": "46865317a029c874592e402536ef81e0c577ff01c2e4ab7f31adf0883ca78501",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 11,
+        "edgeCount": 18,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "agents/request_handler.py": {
+      "mtime": 1790680312.280263,
+      "sizeBytes": 534,
+      "hash": "92e73af7f2dfc1e316f74d45c7ac1d754010461870dc2fc9419c2f5c625dc028",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 3,
+        "edgeCount": 2,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "agents/researcher.py": {
+      "mtime": 1790840198.9094157,
+      "sizeBytes": 2270,
+      "hash": "13e47b61d1390842540360975b0cca4aa2bec7b6c3230702a93a4d92833d23c3",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 12,
+        "edgeCount": 18,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "agents/synthesizer.py": {
+      "mtime": 1791779552.3389552,
+      "sizeBytes": 1211,
+      "hash": "4b7c4c4471335004e7c3cba1968bdac78d229b4ee01eaa53ffbe547d1f943fc8",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 10,
+        "edgeCount": 14,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "utils/__init__.py": {
+      "mtime": 1786481668.413399,
+      "sizeBytes": 0,
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 1,
+        "edgeCount": 0,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "utils/helpers.py": {
+      "mtime": 1791881125.37642,
+      "sizeBytes": 398,
+      "hash": "84aedb09400d146ec58fa07dcb509fd7061c0d7587f3616a839ad5f7b00335ad",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 6,
+        "edgeCount": 6,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "prompts/__init__.py": {
+      "mtime": 1786481668.413156,
+      "sizeBytes": 0,
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 1,
+        "edgeCount": 0,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "prompts/analyst.py": {
+      "mtime": 1791448909.7169926,
+      "sizeBytes": 2393,
+      "hash": "0ee3fab39eb955fb17c6bceec67b307e1db209e66fa0e96d9c2144b4fd425eb7",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 1,
+        "edgeCount": 0,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "prompts/planner.py": {
+      "mtime": 1790836194.3392289,
+      "sizeBytes": 6220,
+      "hash": "f5a926d183468d85b180d0a81f078bc3821ecdf582d13b150a9e165943d9ad04",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 1,
+        "edgeCount": 0,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "prompts/request_handler.py": {
+      "mtime": 1790746457.3501449,
+      "sizeBytes": 5354,
+      "hash": "9e17a215aa7fa0db8f43c3e519888798861f3a31be5ae3216bb6b20fdec7276f",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 1,
+        "edgeCount": 0,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "prompts/researcher.py": {
+      "mtime": 1791282747.1295497,
+      "sizeBytes": 6726,
+      "hash": "8b1135652d9b3e76a970eb362a9af9d039537e79847a0541a3b340b7af7438f6",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 1,
+        "edgeCount": 0,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    },
+    "prompts/synthesizer.py": {
+      "mtime": 1791779411.875791,
+      "sizeBytes": 2875,
+      "hash": "1ea099937b94d4e755e8fcf44e800a72fc81d0aa46e50ed7d33086cef87aa200",
+      "fileType": "code",
+      "architectureTags": [],
+      "extraction": {
+        "language": "python",
+        "status": "ready",
+        "nodeCount": 1,
+        "edgeCount": 0,
+        "warning": null
+      },
+      "semantic": {
+        "status": "disabled",
+        "reason": "semantic_disabled",
+        "backend": "none",
+        "providerStatus": "skipped"
+      }
+    }
+  }
+}

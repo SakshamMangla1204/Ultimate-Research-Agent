@@ -1,0 +1,961 @@
+{
+  "artifact": "modules.json",
+  "status": "ready",
+  "phase": "analyze",
+  "targetPath": "/Users/sakshammangla/Documents/General Research agent/ultimate-research-agent",
+  "scanRoot": ".",
+  "modules": [
+    {
+      "id": "subsystem-1-0-agents",
+      "name": "agents",
+      "kind": "module",
+      "summary": "agents is a module subsystem covering 4 paths and 18 symbols; strongest evidence: calls x57, contains x4.",
+      "confidence": "medium",
+      "sourcePaths": [
+        "agents/analyst.py",
+        "agents/planner.py",
+        "agents/researcher.py",
+        "agents/synthesizer.py"
+      ],
+      "keySymbols": [
+        "researcher_agent()",
+        "analyst_agent()",
+        "planner_agent()",
+        "synthesizer_agent()",
+        "isinstance"
+      ],
+      "responsibilities": [
+        "Primary symbols: call_reference x14, function x4.",
+        "Internal relations: calls x51.",
+        "Exposes 1 interface candidate."
+      ],
+      "publicInterfaces": [
+        "interface-subsystem-1-0-agents-final-report-strip-database"
+      ],
+      "dependsOn": [],
+      "dependedOnBy": [
+        "subsystem-0-0-tools",
+        "subsystem-1-1-main-py",
+        "subsystem-3-0-agents",
+        "subsystem-4-0-tests",
+        "subsystem-7-0-tools"
+      ],
+      "evidence": [
+        "edge:file_agents_analyst_py:contains:symbol_agents_analyst_py_function_analyst_agent:agents/analyst.py:7:0",
+        "edge:file_agents_planner_py:contains:symbol_agents_planner_py_function_planner_agent:agents/planner.py:8:0",
+        "edge:file_agents_researcher_py:contains:symbol_agents_researcher_py_function_researcher_agent:agents/researcher.py:5:0",
+        "edge:file_agents_synthesizer_py:contains:symbol_agents_synthesizer_py_function_synthesizer_agent:agents/synthesizer.py:8:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_agents_researcher_py_call_str:tests/test_analyst_smoke.py:21:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_analyst_prompt_format:agents/analyst.py:24:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_json_loads:agents/analyst.py:41:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_llm_invoke:agents/analyst.py:36:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_result_get:agents/analyst.py:49:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_result_get:agents/analyst.py:51:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_result_get:agents/analyst.py:56:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_state_get:agents/analyst.py:10:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_state_get:agents/analyst.py:11:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_state_get:agents/analyst.py:12:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_state_get:agents/analyst.py:13:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_state_get:agents/analyst.py:14:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_state_get:agents/analyst.py:15:0",
+        "edge:symbol_agents_analyst_py_function_analyst_agent:calls:ref_agents_analyst_py_call_state_get:agents/analyst.py:16:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_json_loads:agents/planner.py:28:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_llm_invoke:agents/planner.py:24:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_result_get:agents/planner.py:37:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_result_get:agents/planner.py:42:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_result_get:agents/planner.py:43:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_result_get:agents/planner.py:44:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_result_get:agents/planner.py:45:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_result_get:agents/planner.py:46:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_state_get:agents/planner.py:11:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_state_get:agents/planner.py:12:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_state_get:agents/planner.py:13:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_analyst_py_call_state_get:agents/planner.py:14:0",
+        "edge:symbol_agents_planner_py_function_planner_agent:calls:ref_agents_planner_py_call_planner_prompt_format:agents/planner.py:16:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_analyst_py_call_result_get:agents/researcher.py:36:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_analyst_py_call_result_get:agents/researcher.py:37:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_analyst_py_call_result_get:agents/researcher.py:38:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_analyst_py_call_state_get:agents/researcher.py:66:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_analyst_py_call_state_get:agents/researcher.py:72:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_analyst_py_call_state_get:agents/researcher.py:73:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_analyst_py_call_state_get:agents/researcher.py:74:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_analyst_py_call_state_get:agents/researcher.py:7:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_researcher_py_call_cleaned_sources_append:agents/researcher.py:43:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_researcher_py_call_current_task_get:agents/researcher.py:15:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_researcher_py_call_current_task_get:agents/researcher.py:16:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_researcher_py_call_isinstance:agents/researcher.py:14:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_researcher_py_call_list:agents/researcher.py:66:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_researcher_py_call_str:agents/researcher.py:18:0",
+        "edge:symbol_agents_researcher_py_function_researcher_agent:calls:ref_agents_researcher_py_call_web_search:agents/researcher.py:26:0",
+        "edge:symbol_agents_synthesizer_py_function_synthesizer_agent:calls:ref_agents_analyst_py_call_llm_invoke:agents/synthesizer.py:31:0",
+        "edge:symbol_agents_synthesizer_py_function_synthesizer_agent:calls:ref_agents_analyst_py_call_state_get:agents/synthesizer.py:11:0",
+        "edge:symbol_agents_synthesizer_py_function_synthesizer_agent:calls:ref_agents_analyst_py_call_state_get:agents/synthesizer.py:12:0",
+        "edge:symbol_agents_synthesizer_py_function_synthesizer_agent:calls:ref_agents_analyst_py_call_state_get:agents/synthesizer.py:13:0",
+        "edge:symbol_agents_synthesizer_py_function_synthesizer_agent:calls:ref_agents_analyst_py_call_state_get:agents/synthesizer.py:14:0",
+        "edge:symbol_agents_synthesizer_py_function_synthesizer_agent:calls:ref_agents_analyst_py_call_state_get:agents/synthesizer.py:15:0",
+        "edge:symbol_agents_synthesizer_py_function_synthesizer_agent:calls:ref_agents_researcher_py_call_isinstance:agents/synthesizer.py:34:0",
+        "edge:symbol_agents_synthesizer_py_function_synthesizer_agent:calls:ref_agents_synthesizer_py_call_final_report_strip:agents/synthesizer.py:34:0",
+        "edge:symbol_agents_synthesizer_py_function_synthesizer_agent:calls:ref_agents_synthesizer_py_call_final_report_strip:agents/synthesizer.py:40:0",
+        "edge:symbol_agents_synthesizer_py_function_synthesizer_agent:calls:ref_agents_synthesizer_py_call_synthesizer_prompt_format:agents/synthesizer.py:22:0",
+        "edge:symbol_main_py_function_main:calls:ref_agents_analyst_py_call_llm_invoke:main.py:8:0",
+        "edge:symbol_tools_web_fetch_py_function_validate_url:calls:ref_agents_researcher_py_call_isinstance:tools/web_fetch.py:74:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_agents_researcher_py_call_isinstance:tools/web_fetch.py:129:0",
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_agents_researcher_py_call_isinstance:tools/web_search.py:39:0",
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_agents_researcher_py_call_isinstance:tools/web_search.py:43:0",
+        "node:ref_agents_analyst_py_call_analyst_prompt_format",
+        "node:ref_agents_analyst_py_call_json_loads",
+        "node:ref_agents_analyst_py_call_llm_invoke",
+        "node:ref_agents_analyst_py_call_result_get",
+        "node:ref_agents_analyst_py_call_state_get",
+        "node:ref_agents_planner_py_call_planner_prompt_format",
+        "node:ref_agents_researcher_py_call_cleaned_sources_append",
+        "node:ref_agents_researcher_py_call_current_task_get",
+        "node:ref_agents_researcher_py_call_isinstance",
+        "node:ref_agents_researcher_py_call_list",
+        "node:ref_agents_researcher_py_call_str",
+        "node:ref_agents_researcher_py_call_web_search",
+        "node:ref_agents_synthesizer_py_call_final_report_strip",
+        "node:ref_agents_synthesizer_py_call_synthesizer_prompt_format",
+        "node:symbol_agents_analyst_py_function_analyst_agent",
+        "node:symbol_agents_planner_py_function_planner_agent",
+        "node:symbol_agents_researcher_py_function_researcher_agent",
+        "node:symbol_agents_synthesizer_py_function_synthesizer_agent"
+      ]
+    },
+    {
+      "id": "subsystem-3-0-agents",
+      "name": "agents",
+      "kind": "ui",
+      "summary": "agents is a ui subsystem covering 10 paths and 8 symbols; strongest evidence: imports x25, calls x10.",
+      "confidence": "medium",
+      "sourcePaths": [
+        "agents/analyst.py",
+        "agents/planner.py",
+        "agents/request_handler.py",
+        "agents/researcher.py",
+        "agents/synthesizer.py",
+        "graph/research_graph.py",
+        "prompts/analyst.py",
+        "prompts/planner.py",
+        "prompts/synthesizer.py",
+        "state.py"
+      ],
+      "keySymbols": [
+        "json",
+        "typing",
+        "request_handler()",
+        "langgraph.graph",
+        "StateGraph"
+      ],
+      "responsibilities": [
+        "Primary symbols: import_reference x3, call_reference x3.",
+        "Internal relations: imports x17, calls x10.",
+        "Exposes 2 interface candidates."
+      ],
+      "publicInterfaces": [
+        "interface-subsystem-3-0-agents-agents-request-handler-py-route",
+        "interface-subsystem-3-0-agents-request-handler-route"
+      ],
+      "dependsOn": [
+        "subsystem-1-0-agents",
+        "subsystem-2-0-config-py"
+      ],
+      "dependedOnBy": [
+        "subsystem-0-0-tools",
+        "subsystem-2-0-config-py",
+        "subsystem-4-0-tests"
+      ],
+      "evidence": [
+        "edge:file_agents_analyst_py:contains:symbol_agents_analyst_py_function_analyst_agent:agents/analyst.py:7:0",
+        "edge:file_agents_analyst_py:imports:file_llm_py:agents/analyst.py:3:0",
+        "edge:file_agents_analyst_py:imports:file_prompts_analyst_py:agents/analyst.py:5:0",
+        "edge:file_agents_analyst_py:imports:file_state_py:agents/analyst.py:2:0",
+        "edge:file_agents_analyst_py:imports:ref_agents_analyst_py_import_json:agents/analyst.py:1:0",
+        "edge:file_agents_planner_py:contains:symbol_agents_planner_py_function_planner_agent:agents/planner.py:8:0",
+        "edge:file_agents_planner_py:imports:file_llm_py:agents/planner.py:3:0",
+        "edge:file_agents_planner_py:imports:file_prompts_planner_py:agents/planner.py:5:0",
+        "edge:file_agents_planner_py:imports:file_state_py:agents/planner.py:4:0",
+        "edge:file_agents_planner_py:imports:ref_agents_analyst_py_import_json:agents/planner.py:1:0",
+        "edge:file_agents_request_handler_py:contains:symbol_agents_request_handler_py_function_request_handler:agents/request_handler.py:4:0",
+        "edge:file_agents_request_handler_py:imports:file_state_py:agents/request_handler.py:1:0",
+        "edge:file_agents_researcher_py:contains:symbol_agents_researcher_py_function_researcher_agent:agents/researcher.py:5:0",
+        "edge:file_agents_researcher_py:imports:file_state_py:agents/researcher.py:1:0",
+        "edge:file_agents_researcher_py:imports:file_tools_web_search_py:agents/researcher.py:2:0",
+        "edge:file_agents_synthesizer_py:contains:symbol_agents_synthesizer_py_function_synthesizer_agent:agents/synthesizer.py:8:0",
+        "edge:file_agents_synthesizer_py:imports:file_llm_py:agents/synthesizer.py:3:0",
+        "edge:file_agents_synthesizer_py:imports:file_prompts_synthesizer_py:agents/synthesizer.py:5:0",
+        "edge:file_agents_synthesizer_py:imports:file_state_py:agents/synthesizer.py:1:0",
+        "edge:file_graph_research_graph_py:calls:ref_graph_research_graph_py_call_builder_add_edge:graph/research_graph.py:16:0",
+        "edge:file_graph_research_graph_py:calls:ref_graph_research_graph_py_call_builder_add_edge:graph/research_graph.py:17:0",
+        "edge:file_graph_research_graph_py:calls:ref_graph_research_graph_py_call_builder_add_edge:graph/research_graph.py:18:0",
+        "edge:file_graph_research_graph_py:calls:ref_graph_research_graph_py_call_builder_add_edge:graph/research_graph.py:19:0",
+        "edge:file_graph_research_graph_py:calls:ref_graph_research_graph_py_call_builder_add_edge:graph/research_graph.py:20:0",
+        "edge:file_graph_research_graph_py:calls:ref_graph_research_graph_py_call_builder_add_node:graph/research_graph.py:11:0",
+        "edge:file_graph_research_graph_py:calls:ref_graph_research_graph_py_call_builder_add_node:graph/research_graph.py:12:0",
+        "edge:file_graph_research_graph_py:calls:ref_graph_research_graph_py_call_builder_add_node:graph/research_graph.py:13:0",
+        "edge:file_graph_research_graph_py:calls:ref_graph_research_graph_py_call_builder_add_node:graph/research_graph.py:14:0",
+        "edge:file_graph_research_graph_py:calls:ref_graph_research_graph_py_call_stategraph:graph/research_graph.py:9:0",
+        "edge:file_graph_research_graph_py:imports:file_agents_analyst_py:graph/research_graph.py:6:0",
+        "edge:file_graph_research_graph_py:imports:file_agents_planner_py:graph/research_graph.py:4:0",
+        "edge:file_graph_research_graph_py:imports:file_agents_researcher_py:graph/research_graph.py:5:0",
+        "edge:file_graph_research_graph_py:imports:file_agents_synthesizer_py:graph/research_graph.py:7:0",
+        "edge:file_graph_research_graph_py:imports:file_state_py:graph/research_graph.py:2:0",
+        "edge:file_graph_research_graph_py:imports:ref_graph_research_graph_py_import_langgraph_graph:graph/research_graph.py:1:0",
+        "edge:file_state_py:contains:symbol_state_py_class_researchstate:state.py:4:0",
+        "edge:file_state_py:imports:ref_state_py_import_typing:state.py:1:0",
+        "edge:file_tests_test_analyst_smoke_py:imports:file_agents_analyst_py:tests/test_analyst_smoke.py:22:0",
+        "edge:file_tests_test_analyst_smoke_py:imports:ref_agents_analyst_py_import_json:tests/test_analyst_smoke.py:1:0",
+        "edge:file_tools_web_fetch_py:imports:ref_state_py_import_typing:tools/web_fetch.py:14:0",
+        "edge:file_tools_web_search_py:imports:ref_state_py_import_typing:tools/web_search.py:4:0",
+        "node:file_agents_analyst_py",
+        "node:file_agents_planner_py",
+        "node:file_agents_request_handler_py",
+        "node:file_agents_researcher_py",
+        "node:file_agents_synthesizer_py",
+        "node:file_graph_research_graph_py",
+        "node:file_prompts_analyst_py",
+        "node:file_prompts_planner_py",
+        "node:file_prompts_synthesizer_py",
+        "node:file_state_py",
+        "node:ref_agents_analyst_py_import_json",
+        "node:ref_graph_research_graph_py_call_builder_add_edge",
+        "node:ref_graph_research_graph_py_call_builder_add_node",
+        "node:ref_graph_research_graph_py_call_stategraph",
+        "node:ref_graph_research_graph_py_import_langgraph_graph",
+        "node:ref_state_py_import_typing",
+        "node:symbol_agents_request_handler_py_function_request_handler",
+        "node:symbol_state_py_class_researchstate"
+      ]
+    },
+    {
+      "id": "subsystem-8-0-agents",
+      "name": "agents",
+      "kind": "module",
+      "summary": "agents is a module subsystem covering 1 paths and 0 symbols; strongest evidence: structure-only edges.",
+      "confidence": "medium",
+      "sourcePaths": [
+        "agents/__init__.py"
+      ],
+      "keySymbols": [],
+      "responsibilities": [],
+      "publicInterfaces": [],
+      "dependsOn": [],
+      "dependedOnBy": [],
+      "evidence": [
+        "node:file_agents_init_py"
+      ]
+    },
+    {
+      "id": "subsystem-2-0-config-py",
+      "name": "config.py",
+      "kind": "adapter",
+      "summary": "config.py is a adapter subsystem covering 3 paths and 16 symbols; strongest evidence: imports x16, calls x16.",
+      "confidence": "low",
+      "sourcePaths": [
+        "config.py",
+        "llm.py",
+        "tools/web_search.py"
+      ],
+      "keySymbols": [
+        "Config",
+        "dotenv",
+        "os",
+        "ValueError",
+        "load_dotenv"
+      ],
+      "responsibilities": [
+        "Primary symbols: call_reference x8, import_reference x6.",
+        "Internal relations: calls x16, imports x10.",
+        "Exposes 1 interface candidate."
+      ],
+      "publicInterfaces": [
+        "interface-subsystem-2-0-config-py-tavilyclient-cli"
+      ],
+      "dependsOn": [
+        "subsystem-3-0-agents",
+        "subsystem-7-0-tools"
+      ],
+      "dependedOnBy": [
+        "subsystem-1-1-main-py",
+        "subsystem-3-0-agents"
+      ],
+      "evidence": [
+        "edge:file_agents_analyst_py:imports:file_llm_py:agents/analyst.py:3:0",
+        "edge:file_agents_planner_py:imports:file_llm_py:agents/planner.py:3:0",
+        "edge:file_agents_researcher_py:imports:file_tools_web_search_py:agents/researcher.py:2:0",
+        "edge:file_agents_synthesizer_py:imports:file_llm_py:agents/synthesizer.py:3:0",
+        "edge:file_config_py:contains:symbol_config_py_class_config:config.py:16:0",
+        "edge:file_llm_py:calls:ref_llm_py_call_chatgooglegenerativeai:llm.py:23:0",
+        "edge:file_llm_py:calls:ref_llm_py_call_chatgroq:llm.py:47:0",
+        "edge:file_llm_py:calls:ref_llm_py_call_chatmistralai:llm.py:35:0",
+        "edge:file_llm_py:calls:ref_llm_py_call_load_dotenv:llm.py:17:0",
+        "edge:file_llm_py:calls:ref_llm_py_call_os_getenv:llm.py:19:0",
+        "edge:file_llm_py:calls:ref_llm_py_call_os_getenv:llm.py:30:0",
+        "edge:file_llm_py:calls:ref_llm_py_call_os_getenv:llm.py:42:0",
+        "edge:file_llm_py:calls:ref_llm_py_call_valueerror:llm.py:21:0",
+        "edge:file_llm_py:calls:ref_llm_py_call_valueerror:llm.py:33:0",
+        "edge:file_llm_py:calls:ref_llm_py_call_valueerror:llm.py:45:0",
+        "edge:file_llm_py:calls:ref_llm_py_call_valueerror:llm.py:60:0",
+        "edge:file_llm_py:imports:file_config_py:llm.py:8:0",
+        "edge:file_llm_py:imports:ref_llm_py_import_dotenv:llm.py:2:0",
+        "edge:file_llm_py:imports:ref_llm_py_import_langchain_google_genai:llm.py:4:0",
+        "edge:file_llm_py:imports:ref_llm_py_import_langchain_groq:llm.py:6:0",
+        "edge:file_llm_py:imports:ref_llm_py_import_langchain_mistralai:llm.py:5:0",
+        "edge:file_llm_py:imports:ref_llm_py_import_os:llm.py:1:0",
+        "edge:file_main_py:imports:file_llm_py:main.py:1:0",
+        "edge:file_tools_web_search_py:calls:ref_llm_py_call_load_dotenv:tools/web_search.py:11:0",
+        "edge:file_tools_web_search_py:calls:ref_llm_py_call_os_getenv:tools/web_search.py:14:0",
+        "edge:file_tools_web_search_py:calls:ref_llm_py_call_valueerror:tools/web_search.py:16:0",
+        "edge:file_tools_web_search_py:calls:ref_tools_web_search_py_call_config:tools/web_search.py:13:0",
+        "edge:file_tools_web_search_py:calls:ref_tools_web_search_py_call_tavilyclient:tools/web_search.py:18:0",
+        "edge:file_tools_web_search_py:contains:symbol_tools_web_search_py_function_web_search:tools/web_search.py:21:0",
+        "edge:file_tools_web_search_py:imports:file_config_py:tools/web_search.py:9:0",
+        "edge:file_tools_web_search_py:imports:ref_llm_py_import_dotenv:tools/web_search.py:6:0",
+        "edge:file_tools_web_search_py:imports:ref_llm_py_import_os:tools/web_search.py:3:0",
+        "edge:file_tools_web_search_py:imports:ref_state_py_import_typing:tools/web_search.py:4:0",
+        "edge:file_tools_web_search_py:imports:ref_tools_web_search_py_import_tavily:tools/web_search.py:7:0",
+        "edge:symbol_config_py_class_config:contains:symbol_config_py_method_config_init:config.py:19:0",
+        "node:file_config_py",
+        "node:file_llm_py",
+        "node:file_tools_web_search_py",
+        "node:ref_llm_py_call_chatgooglegenerativeai",
+        "node:ref_llm_py_call_chatgroq",
+        "node:ref_llm_py_call_chatmistralai",
+        "node:ref_llm_py_call_load_dotenv",
+        "node:ref_llm_py_call_os_getenv",
+        "node:ref_llm_py_call_valueerror",
+        "node:ref_llm_py_import_dotenv",
+        "node:ref_llm_py_import_langchain_google_genai",
+        "node:ref_llm_py_import_langchain_groq",
+        "node:ref_llm_py_import_langchain_mistralai",
+        "node:ref_llm_py_import_os",
+        "node:ref_tools_web_search_py_call_config",
+        "node:ref_tools_web_search_py_call_tavilyclient",
+        "node:ref_tools_web_search_py_import_tavily",
+        "node:symbol_config_py_class_config",
+        "node:symbol_config_py_method_config_init"
+      ]
+    },
+    {
+      "id": "subsystem-9-0-graph",
+      "name": "graph",
+      "kind": "module",
+      "summary": "graph is a module subsystem covering 1 paths and 0 symbols; strongest evidence: structure-only edges.",
+      "confidence": "medium",
+      "sourcePaths": [
+        "graph/__init__.py"
+      ],
+      "keySymbols": [],
+      "responsibilities": [],
+      "publicInterfaces": [],
+      "dependsOn": [],
+      "dependedOnBy": [],
+      "evidence": [
+        "node:file_graph_init_py"
+      ]
+    },
+    {
+      "id": "subsystem-10-0-logger-py",
+      "name": "logger.py",
+      "kind": "infrastructure",
+      "summary": "logger.py is a infrastructure subsystem covering 1 paths and 0 symbols; strongest evidence: structure-only edges.",
+      "confidence": "medium",
+      "sourcePaths": [
+        "logger.py"
+      ],
+      "keySymbols": [],
+      "responsibilities": [],
+      "publicInterfaces": [],
+      "dependsOn": [],
+      "dependedOnBy": [],
+      "evidence": [
+        "node:file_logger_py"
+      ]
+    },
+    {
+      "id": "subsystem-1-1-main-py",
+      "name": "main.py",
+      "kind": "module",
+      "summary": "main.py is a module subsystem covering 1 paths and 2 symbols; strongest evidence: calls x9, imports x1.",
+      "confidence": "medium",
+      "sourcePaths": [
+        "main.py"
+      ],
+      "keySymbols": [
+        "main()",
+        "print"
+      ],
+      "responsibilities": [
+        "Primary symbols: function x1, call_reference x1.",
+        "Internal relations: calls x5, contains x1.",
+        "Exposes 3 interface candidates."
+      ],
+      "publicInterfaces": [
+        "interface-subsystem-1-1-main-py-main-entrypoint",
+        "interface-subsystem-1-1-main-py-main-py-entrypoint",
+        "interface-subsystem-1-1-main-py-print-entrypoint"
+      ],
+      "dependsOn": [
+        "subsystem-1-0-agents",
+        "subsystem-2-0-config-py"
+      ],
+      "dependedOnBy": [
+        "subsystem-4-0-tests"
+      ],
+      "evidence": [
+        "edge:file_main_py:calls:symbol_main_py_function_main:main.py:15:0",
+        "edge:file_main_py:contains:symbol_main_py_function_main:main.py:4:0",
+        "edge:file_main_py:imports:file_llm_py:main.py:1:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_main_py_call_print:tests/test_analyst_smoke.py:36:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_main_py_call_print:tests/test_analyst_smoke.py:43:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_main_py_call_print:tests/test_analyst_smoke.py:46:0",
+        "edge:symbol_main_py_function_main:calls:ref_agents_analyst_py_call_llm_invoke:main.py:8:0",
+        "edge:symbol_main_py_function_main:calls:ref_main_py_call_print:main.py:10:0",
+        "edge:symbol_main_py_function_main:calls:ref_main_py_call_print:main.py:11:0",
+        "edge:symbol_main_py_function_main:calls:ref_main_py_call_print:main.py:5:0",
+        "edge:symbol_main_py_function_main:calls:ref_main_py_call_print:main.py:6:0",
+        "node:file_main_py",
+        "node:ref_main_py_call_print",
+        "node:symbol_main_py_function_main"
+      ]
+    },
+    {
+      "id": "subsystem-11-0-prompts",
+      "name": "prompts",
+      "kind": "module",
+      "summary": "prompts is a module subsystem covering 1 paths and 0 symbols; strongest evidence: structure-only edges.",
+      "confidence": "medium",
+      "sourcePaths": [
+        "prompts/__init__.py"
+      ],
+      "keySymbols": [],
+      "responsibilities": [],
+      "publicInterfaces": [],
+      "dependsOn": [],
+      "dependedOnBy": [],
+      "evidence": [
+        "node:file_prompts_init_py"
+      ]
+    },
+    {
+      "id": "subsystem-12-0-prompts",
+      "name": "prompts",
+      "kind": "service",
+      "summary": "prompts is a service subsystem covering 1 paths and 0 symbols; strongest evidence: structure-only edges.",
+      "confidence": "medium",
+      "sourcePaths": [
+        "prompts/request_handler.py"
+      ],
+      "keySymbols": [],
+      "responsibilities": [
+        "Exposes 1 interface candidate."
+      ],
+      "publicInterfaces": [
+        "interface-subsystem-12-0-prompts-prompts-request-handler-py-route"
+      ],
+      "dependsOn": [],
+      "dependedOnBy": [],
+      "evidence": [
+        "node:file_prompts_request_handler_py"
+      ]
+    },
+    {
+      "id": "subsystem-13-0-prompts",
+      "name": "prompts",
+      "kind": "module",
+      "summary": "prompts is a module subsystem covering 1 paths and 0 symbols; strongest evidence: structure-only edges.",
+      "confidence": "medium",
+      "sourcePaths": [
+        "prompts/researcher.py"
+      ],
+      "keySymbols": [],
+      "responsibilities": [],
+      "publicInterfaces": [],
+      "dependsOn": [],
+      "dependedOnBy": [],
+      "evidence": [
+        "node:file_prompts_researcher_py"
+      ]
+    },
+    {
+      "id": "subsystem-4-0-tests",
+      "name": "tests",
+      "kind": "domain",
+      "summary": "tests is a domain subsystem covering 1 paths and 13 symbols; strongest evidence: calls x14, imports x5.",
+      "confidence": "medium",
+      "sourcePaths": [
+        "tests/test_analyst_smoke.py"
+      ],
+      "keySymbols": [
+        "FakeResp",
+        "FakeLLM",
+        "FakeLLM.invoke()",
+        "pathlib",
+        "sys"
+      ],
+      "responsibilities": [
+        "Primary symbols: call_reference x7, import_reference x3.",
+        "Internal relations: calls x10, imports x3."
+      ],
+      "publicInterfaces": [],
+      "dependsOn": [
+        "subsystem-1-0-agents",
+        "subsystem-1-1-main-py",
+        "subsystem-3-0-agents"
+      ],
+      "dependedOnBy": [],
+      "evidence": [
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_agents_researcher_py_call_str:tests/test_analyst_smoke.py:21:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_main_py_call_print:tests/test_analyst_smoke.py:36:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_main_py_call_print:tests/test_analyst_smoke.py:43:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_main_py_call_print:tests/test_analyst_smoke.py:46:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_tests_test_analyst_smoke_py_call_analyst_agent:tests/test_analyst_smoke.py:35:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_tests_test_analyst_smoke_py_call_analyst_agent:tests/test_analyst_smoke.py:42:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_tests_test_analyst_smoke_py_call_insert:tests/test_analyst_smoke.py:21:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_tests_test_analyst_smoke_py_call_pathlib_path:tests/test_analyst_smoke.py:21:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_tests_test_analyst_smoke_py_call_resolve:tests/test_analyst_smoke.py:21:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_tests_test_analyst_smoke_py_call_startswith:tests/test_analyst_smoke.py:37:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_tests_test_analyst_smoke_py_call_types_moduletype:tests/test_analyst_smoke.py:4:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:symbol_tests_test_analyst_smoke_py_class_fakellm:tests/test_analyst_smoke.py:18:0",
+        "edge:file_tests_test_analyst_smoke_py:contains:symbol_tests_test_analyst_smoke_py_class_fakellm:tests/test_analyst_smoke.py:13:0",
+        "edge:file_tests_test_analyst_smoke_py:contains:symbol_tests_test_analyst_smoke_py_class_fakeresp:tests/test_analyst_smoke.py:6:0",
+        "edge:file_tests_test_analyst_smoke_py:imports:file_agents_analyst_py:tests/test_analyst_smoke.py:22:0",
+        "edge:file_tests_test_analyst_smoke_py:imports:ref_agents_analyst_py_import_json:tests/test_analyst_smoke.py:1:0",
+        "edge:file_tests_test_analyst_smoke_py:imports:ref_tests_test_analyst_smoke_py_import_pathlib:tests/test_analyst_smoke.py:1:0",
+        "edge:file_tests_test_analyst_smoke_py:imports:ref_tests_test_analyst_smoke_py_import_sys:tests/test_analyst_smoke.py:1:0",
+        "edge:file_tests_test_analyst_smoke_py:imports:ref_tests_test_analyst_smoke_py_import_types:tests/test_analyst_smoke.py:1:0",
+        "edge:symbol_tests_test_analyst_smoke_py_class_fakellm:contains:symbol_tests_test_analyst_smoke_py_method_fakellm_invoke:tests/test_analyst_smoke.py:14:0",
+        "edge:symbol_tests_test_analyst_smoke_py_class_fakeresp:calls:ref_tests_test_analyst_smoke_py_call_json_dumps:tests/test_analyst_smoke.py:7:0",
+        "edge:symbol_tests_test_analyst_smoke_py_method_fakellm_invoke:calls:symbol_tests_test_analyst_smoke_py_class_fakeresp:tests/test_analyst_smoke.py:16:0",
+        "node:file_tests_test_analyst_smoke_py",
+        "node:ref_tests_test_analyst_smoke_py_call_analyst_agent",
+        "node:ref_tests_test_analyst_smoke_py_call_insert",
+        "node:ref_tests_test_analyst_smoke_py_call_json_dumps",
+        "node:ref_tests_test_analyst_smoke_py_call_pathlib_path",
+        "node:ref_tests_test_analyst_smoke_py_call_resolve",
+        "node:ref_tests_test_analyst_smoke_py_call_startswith",
+        "node:ref_tests_test_analyst_smoke_py_call_types_moduletype",
+        "node:ref_tests_test_analyst_smoke_py_import_pathlib",
+        "node:ref_tests_test_analyst_smoke_py_import_sys",
+        "node:ref_tests_test_analyst_smoke_py_import_types",
+        "node:symbol_tests_test_analyst_smoke_py_class_fakellm",
+        "node:symbol_tests_test_analyst_smoke_py_class_fakeresp",
+        "node:symbol_tests_test_analyst_smoke_py_method_fakellm_invoke"
+      ]
+    },
+    {
+      "id": "subsystem-0-0-tools",
+      "name": "tools",
+      "kind": "module",
+      "summary": "tools is a module subsystem covering 1 paths and 22 symbols; strongest evidence: calls x23, imports x7.",
+      "confidence": "medium",
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "keySymbols": [
+        "web_fetch()",
+        "validate_url()",
+        "_extract_text()",
+        "url.strip",
+        "__future__"
+      ],
+      "responsibilities": [
+        "Primary symbols: call_reference x13, import_reference x6.",
+        "Internal relations: calls x20, imports x6."
+      ],
+      "publicInterfaces": [],
+      "dependsOn": [
+        "subsystem-1-0-agents",
+        "subsystem-3-0-agents",
+        "subsystem-5-0-tools"
+      ],
+      "dependedOnBy": [],
+      "evidence": [
+        "edge:file_tools_web_fetch_py:contains:symbol_tools_web_fetch_py_class_textextractor:tools/web_fetch.py:31:0",
+        "edge:file_tools_web_fetch_py:contains:symbol_tools_web_fetch_py_function_extract_text:tools/web_fetch.py:61:0",
+        "edge:file_tools_web_fetch_py:contains:symbol_tools_web_fetch_py_function_validate_url:tools/web_fetch.py:68:0",
+        "edge:file_tools_web_fetch_py:contains:symbol_tools_web_fetch_py_function_web_fetch:tools/web_fetch.py:115:0",
+        "edge:file_tools_web_fetch_py:imports:ref_state_py_import_typing:tools/web_fetch.py:14:0",
+        "edge:file_tools_web_fetch_py:imports:ref_tools_web_fetch_py_import_future:tools/web_fetch.py:9:0",
+        "edge:file_tools_web_fetch_py:imports:ref_tools_web_fetch_py_import_html_parser:tools/web_fetch.py:13:0",
+        "edge:file_tools_web_fetch_py:imports:ref_tools_web_fetch_py_import_ipaddress:tools/web_fetch.py:11:0",
+        "edge:file_tools_web_fetch_py:imports:ref_tools_web_fetch_py_import_requests:tools/web_fetch.py:17:0",
+        "edge:file_tools_web_fetch_py:imports:ref_tools_web_fetch_py_import_socket:tools/web_fetch.py:12:0",
+        "edge:file_tools_web_fetch_py:imports:ref_tools_web_fetch_py_import_urllib_parse:tools/web_fetch.py:15:0",
+        "edge:symbol_tools_web_fetch_py_function_extract_text:calls:ref_tools_web_fetch_py_call_parser_feed:tools/web_fetch.py:64:0",
+        "edge:symbol_tools_web_fetch_py_function_extract_text:calls:ref_tools_web_fetch_py_call_parser_text:tools/web_fetch.py:65:0",
+        "edge:symbol_tools_web_fetch_py_function_extract_text:calls:symbol_tools_web_fetch_py_class_textextractor:tools/web_fetch.py:63:0",
+        "edge:symbol_tools_web_fetch_py_function_validate_url:calls:ref_agents_researcher_py_call_isinstance:tools/web_fetch.py:74:0",
+        "edge:symbol_tools_web_fetch_py_function_validate_url:calls:ref_tools_web_fetch_py_call_ipaddress_ip_address:tools/web_fetch.py:106:0",
+        "edge:symbol_tools_web_fetch_py_function_validate_url:calls:ref_tools_web_fetch_py_call_socket_getaddrinfo:tools/web_fetch.py:96:0",
+        "edge:symbol_tools_web_fetch_py_function_validate_url:calls:ref_tools_web_fetch_py_call_url_strip:tools/web_fetch.py:78:0",
+        "edge:symbol_tools_web_fetch_py_function_validate_url:calls:ref_tools_web_fetch_py_call_urlparse:tools/web_fetch.py:78:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_agents_researcher_py_call_isinstance:tools/web_fetch.py:129:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_content_type_lower:tools/web_fetch.py:155:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_find:tools/web_fetch.py:158:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_find:tools/web_fetch.py:161:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_get:tools/web_fetch.py:154:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_html_find:tools/web_fetch.py:160:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_html_lower:tools/web_fetch.py:158:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_html_lower:tools/web_fetch.py:161:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_requests_get:tools/web_fetch.py:138:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_strip:tools/web_fetch.py:163:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_strip:tools/web_fetch.py:167:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_url_strip:tools/web_fetch.py:129:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_tools_web_fetch_py_call_url_strip:tools/web_fetch.py:139:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:symbol_tools_web_fetch_py_function_extract_text:tools/web_fetch.py:165:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:symbol_tools_web_fetch_py_function_validate_url:tools/web_fetch.py:133:0",
+        "node:file_tools_web_fetch_py",
+        "node:ref_tools_web_fetch_py_call_content_type_lower",
+        "node:ref_tools_web_fetch_py_call_find",
+        "node:ref_tools_web_fetch_py_call_get",
+        "node:ref_tools_web_fetch_py_call_html_find",
+        "node:ref_tools_web_fetch_py_call_html_lower",
+        "node:ref_tools_web_fetch_py_call_ipaddress_ip_address",
+        "node:ref_tools_web_fetch_py_call_parser_feed",
+        "node:ref_tools_web_fetch_py_call_parser_text",
+        "node:ref_tools_web_fetch_py_call_requests_get",
+        "node:ref_tools_web_fetch_py_call_socket_getaddrinfo",
+        "node:ref_tools_web_fetch_py_call_strip",
+        "node:ref_tools_web_fetch_py_call_url_strip",
+        "node:ref_tools_web_fetch_py_call_urlparse",
+        "node:ref_tools_web_fetch_py_import_future",
+        "node:ref_tools_web_fetch_py_import_html_parser",
+        "node:ref_tools_web_fetch_py_import_ipaddress",
+        "node:ref_tools_web_fetch_py_import_requests",
+        "node:ref_tools_web_fetch_py_import_socket",
+        "node:ref_tools_web_fetch_py_import_urllib_parse",
+        "node:symbol_tools_web_fetch_py_function_extract_text",
+        "node:symbol_tools_web_fetch_py_function_validate_url",
+        "node:symbol_tools_web_fetch_py_function_web_fetch"
+      ]
+    },
+    {
+      "id": "subsystem-14-0-tools",
+      "name": "tools",
+      "kind": "module",
+      "summary": "tools is a module subsystem covering 1 paths and 0 symbols; strongest evidence: structure-only edges.",
+      "confidence": "medium",
+      "sourcePaths": [
+        "tools/__init__.py"
+      ],
+      "keySymbols": [],
+      "responsibilities": [],
+      "publicInterfaces": [],
+      "dependsOn": [],
+      "dependedOnBy": [],
+      "evidence": [
+        "node:file_tools_init_py"
+      ]
+    },
+    {
+      "id": "subsystem-5-0-tools",
+      "name": "tools",
+      "kind": "domain",
+      "summary": "tools is a domain subsystem covering 1 paths and 12 symbols; strongest evidence: calls x10, contains x6.",
+      "confidence": "medium",
+      "sourcePaths": [
+        "tools/web_fetch.py"
+      ],
+      "keySymbols": [
+        "_TextExtractor",
+        "_TextExtractor.text()",
+        "_TextExtractor.handle_data()",
+        "append",
+        "_TextExtractor.__init__()"
+      ],
+      "responsibilities": [
+        "Primary symbols: call_reference x6, method x5.",
+        "Internal relations: calls x9, contains x5."
+      ],
+      "publicInterfaces": [],
+      "dependsOn": [],
+      "dependedOnBy": [
+        "subsystem-0-0-tools"
+      ],
+      "evidence": [
+        "edge:file_tools_web_fetch_py:contains:symbol_tools_web_fetch_py_class_textextractor:tools/web_fetch.py:31:0",
+        "edge:symbol_tools_web_fetch_py_class_textextractor:contains:symbol_tools_web_fetch_py_method_textextractor_handle_data:tools/web_fetch.py:51:0",
+        "edge:symbol_tools_web_fetch_py_class_textextractor:contains:symbol_tools_web_fetch_py_method_textextractor_handle_endtag:tools/web_fetch.py:45:0",
+        "edge:symbol_tools_web_fetch_py_class_textextractor:contains:symbol_tools_web_fetch_py_method_textextractor_handle_starttag:tools/web_fetch.py:39:0",
+        "edge:symbol_tools_web_fetch_py_class_textextractor:contains:symbol_tools_web_fetch_py_method_textextractor_init:tools/web_fetch.py:34:0",
+        "edge:symbol_tools_web_fetch_py_class_textextractor:contains:symbol_tools_web_fetch_py_method_textextractor_text:tools/web_fetch.py:55:0",
+        "edge:symbol_tools_web_fetch_py_function_extract_text:calls:symbol_tools_web_fetch_py_class_textextractor:tools/web_fetch.py:63:0",
+        "edge:symbol_tools_web_fetch_py_method_textextractor_handle_data:calls:ref_tools_web_fetch_py_call_append:tools/web_fetch.py:53:0",
+        "edge:symbol_tools_web_fetch_py_method_textextractor_handle_data:calls:ref_tools_web_fetch_py_call_data_strip:tools/web_fetch.py:52:0",
+        "edge:symbol_tools_web_fetch_py_method_textextractor_handle_endtag:calls:ref_tools_web_fetch_py_call_append:tools/web_fetch.py:49:0",
+        "edge:symbol_tools_web_fetch_py_method_textextractor_handle_starttag:calls:ref_tools_web_fetch_py_call_append:tools/web_fetch.py:43:0",
+        "edge:symbol_tools_web_fetch_py_method_textextractor_init:calls:ref_tools_web_fetch_py_call_super:tools/web_fetch.py:35:0",
+        "edge:symbol_tools_web_fetch_py_method_textextractor_text:calls:ref_tools_web_fetch_py_call_join:tools/web_fetch.py:56:0",
+        "edge:symbol_tools_web_fetch_py_method_textextractor_text:calls:ref_tools_web_fetch_py_call_join:tools/web_fetch.py:58:0",
+        "edge:symbol_tools_web_fetch_py_method_textextractor_text:calls:ref_tools_web_fetch_py_call_line_strip:tools/web_fetch.py:57:0",
+        "edge:symbol_tools_web_fetch_py_method_textextractor_text:calls:ref_tools_web_fetch_py_call_raw_splitlines:tools/web_fetch.py:57:0",
+        "node:ref_tools_web_fetch_py_call_append",
+        "node:ref_tools_web_fetch_py_call_data_strip",
+        "node:ref_tools_web_fetch_py_call_join",
+        "node:ref_tools_web_fetch_py_call_line_strip",
+        "node:ref_tools_web_fetch_py_call_raw_splitlines",
+        "node:ref_tools_web_fetch_py_call_super",
+        "node:symbol_tools_web_fetch_py_class_textextractor",
+        "node:symbol_tools_web_fetch_py_method_textextractor_handle_data",
+        "node:symbol_tools_web_fetch_py_method_textextractor_handle_endtag",
+        "node:symbol_tools_web_fetch_py_method_textextractor_handle_starttag",
+        "node:symbol_tools_web_fetch_py_method_textextractor_init",
+        "node:symbol_tools_web_fetch_py_method_textextractor_text"
+      ]
+    },
+    {
+      "id": "subsystem-7-0-tools",
+      "name": "tools",
+      "kind": "adapter",
+      "summary": "tools is a adapter subsystem covering 1 paths and 6 symbols; strongest evidence: calls x9, contains x1.",
+      "confidence": "medium",
+      "sourcePaths": [
+        "tools/web_search.py"
+      ],
+      "keySymbols": [
+        "web_search()",
+        "_client.search",
+        "item.get",
+        "normalized.append",
+        "query.strip"
+      ],
+      "responsibilities": [
+        "Primary symbols: call_reference x5, function x1.",
+        "Internal relations: calls x7.",
+        "Exposes 2 interface candidates."
+      ],
+      "publicInterfaces": [
+        "interface-subsystem-7-0-tools-client-search-cli",
+        "interface-subsystem-7-0-tools-query-strip-database"
+      ],
+      "dependsOn": [
+        "subsystem-1-0-agents"
+      ],
+      "dependedOnBy": [
+        "subsystem-2-0-config-py"
+      ],
+      "evidence": [
+        "edge:file_tools_web_search_py:contains:symbol_tools_web_search_py_function_web_search:tools/web_search.py:21:0",
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_agents_researcher_py_call_isinstance:tools/web_search.py:39:0",
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_agents_researcher_py_call_isinstance:tools/web_search.py:43:0",
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_tools_web_search_py_call_client_search:tools/web_search.py:32:0",
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_tools_web_search_py_call_item_get:tools/web_search.py:47:0",
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_tools_web_search_py_call_item_get:tools/web_search.py:48:0",
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_tools_web_search_py_call_item_get:tools/web_search.py:49:0",
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_tools_web_search_py_call_normalized_append:tools/web_search.py:45:0",
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_tools_web_search_py_call_query_strip:tools/web_search.py:27:0",
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_tools_web_search_py_call_response_get:tools/web_search.py:39:0",
+        "node:ref_tools_web_search_py_call_client_search",
+        "node:ref_tools_web_search_py_call_item_get",
+        "node:ref_tools_web_search_py_call_normalized_append",
+        "node:ref_tools_web_search_py_call_query_strip",
+        "node:ref_tools_web_search_py_call_response_get",
+        "node:symbol_tools_web_search_py_function_web_search"
+      ]
+    },
+    {
+      "id": "subsystem-15-0-utils",
+      "name": "utils",
+      "kind": "shared_library",
+      "summary": "utils is a shared_library subsystem covering 1 paths and 0 symbols; strongest evidence: structure-only edges.",
+      "confidence": "medium",
+      "sourcePaths": [
+        "utils/__init__.py"
+      ],
+      "keySymbols": [],
+      "responsibilities": [],
+      "publicInterfaces": [],
+      "dependsOn": [],
+      "dependedOnBy": [],
+      "evidence": [
+        "node:file_utils_init_py"
+      ]
+    },
+    {
+      "id": "subsystem-6-0-utils",
+      "name": "utils",
+      "kind": "shared_library",
+      "summary": "utils is a shared_library subsystem covering 1 paths and 5 symbols; strongest evidence: contains x3, calls x3.",
+      "confidence": "medium",
+      "sourcePaths": [
+        "utils/helpers.py"
+      ],
+      "keySymbols": [
+        "is_non_empty_text()",
+        "clean_text()",
+        "text.strip",
+        "truncate_text()",
+        "bool"
+      ],
+      "responsibilities": [
+        "Primary symbols: function x3, call_reference x2.",
+        "Internal relations: contains x3, calls x3.",
+        "Exposes 1 interface candidate."
+      ],
+      "publicInterfaces": [
+        "interface-subsystem-6-0-utils-truncate-text-cli"
+      ],
+      "dependsOn": [],
+      "dependedOnBy": [],
+      "evidence": [
+        "edge:file_utils_helpers_py:contains:symbol_utils_helpers_py_function_clean_text:utils/helpers.py:1:0",
+        "edge:file_utils_helpers_py:contains:symbol_utils_helpers_py_function_is_non_empty_text:utils/helpers.py:6:0",
+        "edge:file_utils_helpers_py:contains:symbol_utils_helpers_py_function_truncate_text:utils/helpers.py:11:0",
+        "edge:symbol_utils_helpers_py_function_clean_text:calls:ref_utils_helpers_py_call_text_strip:utils/helpers.py:3:0",
+        "edge:symbol_utils_helpers_py_function_is_non_empty_text:calls:ref_utils_helpers_py_call_bool:utils/helpers.py:8:0",
+        "edge:symbol_utils_helpers_py_function_is_non_empty_text:calls:ref_utils_helpers_py_call_text_strip:utils/helpers.py:8:0",
+        "node:file_utils_helpers_py",
+        "node:ref_utils_helpers_py_call_bool",
+        "node:ref_utils_helpers_py_call_text_strip",
+        "node:symbol_utils_helpers_py_function_clean_text",
+        "node:symbol_utils_helpers_py_function_is_non_empty_text",
+        "node:symbol_utils_helpers_py_function_truncate_text"
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "sourceModuleId": "subsystem-0-0-tools",
+      "targetModuleId": "subsystem-3-0-agents",
+      "relation": "imports",
+      "summary": "imports x1",
+      "confidence": "high",
+      "evidence": [
+        "edge:file_tools_web_fetch_py:imports:ref_state_py_import_typing:tools/web_fetch.py:14:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-0-0-tools",
+      "targetModuleId": "subsystem-5-0-tools",
+      "relation": "calls",
+      "summary": "contains x1, calls x1",
+      "confidence": "high",
+      "evidence": [
+        "edge:file_tools_web_fetch_py:contains:symbol_tools_web_fetch_py_class_textextractor:tools/web_fetch.py:31:0",
+        "edge:symbol_tools_web_fetch_py_function_extract_text:calls:symbol_tools_web_fetch_py_class_textextractor:tools/web_fetch.py:63:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-2-0-config-py",
+      "targetModuleId": "subsystem-3-0-agents",
+      "relation": "imports",
+      "summary": "imports x1",
+      "confidence": "high",
+      "evidence": [
+        "edge:file_tools_web_search_py:imports:ref_state_py_import_typing:tools/web_search.py:4:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-2-0-config-py",
+      "targetModuleId": "subsystem-7-0-tools",
+      "relation": "contains",
+      "summary": "contains x1",
+      "confidence": "high",
+      "evidence": [
+        "edge:file_tools_web_search_py:contains:symbol_tools_web_search_py_function_web_search:tools/web_search.py:21:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-3-0-agents",
+      "targetModuleId": "subsystem-1-0-agents",
+      "relation": "contains",
+      "summary": "contains x4",
+      "confidence": "high",
+      "evidence": [
+        "edge:file_agents_analyst_py:contains:symbol_agents_analyst_py_function_analyst_agent:agents/analyst.py:7:0",
+        "edge:file_agents_planner_py:contains:symbol_agents_planner_py_function_planner_agent:agents/planner.py:8:0",
+        "edge:file_agents_researcher_py:contains:symbol_agents_researcher_py_function_researcher_agent:agents/researcher.py:5:0",
+        "edge:file_agents_synthesizer_py:contains:symbol_agents_synthesizer_py_function_synthesizer_agent:agents/synthesizer.py:8:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-4-0-tests",
+      "targetModuleId": "subsystem-3-0-agents",
+      "relation": "imports",
+      "summary": "imports x2",
+      "confidence": "high",
+      "evidence": [
+        "edge:file_tests_test_analyst_smoke_py:imports:file_agents_analyst_py:tests/test_analyst_smoke.py:22:0",
+        "edge:file_tests_test_analyst_smoke_py:imports:ref_agents_analyst_py_import_json:tests/test_analyst_smoke.py:1:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-1-1-main-py",
+      "targetModuleId": "subsystem-2-0-config-py",
+      "relation": "imports",
+      "summary": "imports x1",
+      "confidence": "medium",
+      "evidence": [
+        "edge:file_main_py:imports:file_llm_py:main.py:1:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-3-0-agents",
+      "targetModuleId": "subsystem-2-0-config-py",
+      "relation": "imports",
+      "summary": "imports x4",
+      "confidence": "medium",
+      "evidence": [
+        "edge:file_agents_analyst_py:imports:file_llm_py:agents/analyst.py:3:0",
+        "edge:file_agents_planner_py:imports:file_llm_py:agents/planner.py:3:0",
+        "edge:file_agents_researcher_py:imports:file_tools_web_search_py:agents/researcher.py:2:0",
+        "edge:file_agents_synthesizer_py:imports:file_llm_py:agents/synthesizer.py:3:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-0-0-tools",
+      "targetModuleId": "subsystem-1-0-agents",
+      "relation": "calls",
+      "summary": "calls x2",
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_fetch_py_function_validate_url:calls:ref_agents_researcher_py_call_isinstance:tools/web_fetch.py:74:0",
+        "edge:symbol_tools_web_fetch_py_function_web_fetch:calls:ref_agents_researcher_py_call_isinstance:tools/web_fetch.py:129:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-1-1-main-py",
+      "targetModuleId": "subsystem-1-0-agents",
+      "relation": "calls",
+      "summary": "calls x1",
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_main_py_function_main:calls:ref_agents_analyst_py_call_llm_invoke:main.py:8:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-4-0-tests",
+      "targetModuleId": "subsystem-1-0-agents",
+      "relation": "calls",
+      "summary": "calls x1",
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_agents_researcher_py_call_str:tests/test_analyst_smoke.py:21:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-4-0-tests",
+      "targetModuleId": "subsystem-1-1-main-py",
+      "relation": "calls",
+      "summary": "calls x3",
+      "confidence": "low",
+      "evidence": [
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_main_py_call_print:tests/test_analyst_smoke.py:36:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_main_py_call_print:tests/test_analyst_smoke.py:43:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_main_py_call_print:tests/test_analyst_smoke.py:46:0"
+      ]
+    },
+    {
+      "sourceModuleId": "subsystem-7-0-tools",
+      "targetModuleId": "subsystem-1-0-agents",
+      "relation": "calls",
+      "summary": "calls x2",
+      "confidence": "low",
+      "evidence": [
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_agents_researcher_py_call_isinstance:tools/web_search.py:39:0",
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_agents_researcher_py_call_isinstance:tools/web_search.py:43:0"
+      ]
+    }
+  ]
+}

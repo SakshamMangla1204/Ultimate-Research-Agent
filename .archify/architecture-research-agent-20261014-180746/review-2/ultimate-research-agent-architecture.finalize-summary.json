@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/candidate.json",
+    "sha256": "c8356bee68dc77addd4e0aca540664c9b4947c040d7f0ee500f54454faa8824d",
+    "bytes": 8676
+  },
+  "artifact": {
+    "path": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/ultimate-research-agent-architecture.html",
+    "sha256": "22c26da1cd8c4859ab764b16de58d8c9571f1538815c5c6ead999b033ad0067b",
+    "bytes": 835894
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/review-2/ultimate-research-agent-architecture.finalize.json",
+    "summaryReceipt": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/review-2/ultimate-research-agent-architecture.finalize-summary.json",
+    "browserCheckReceipt": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/review-2/ultimate-research-agent-architecture.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.1.0",
+    "availableVersion": "3.1.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-14T09:26:39.765Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 2018,
+  "visualReviewRecommendation": {
+    "action": "inspect-route-readability",
+    "signals": {
+      "resolvedCrossovers": 3,
+      "routesOverSuggestedBends": 3
+    },
+    "reason": "Automated gates passed, but crossings or detours still need perceptual review before claiming visual quality.",
+    "affectedRoutes": {
+      "crossings": [
+        {
+          "left": {
+            "id": "analyst-to-synthesizer",
+            "from": "analyst",
+            "to": "synthesizer",
+            "label": "analysis",
+            "collectionIndex": 5,
+            "artifactIndex": 6
+          },
+          "right": {
+            "id": "synthesizer-to-end",
+            "from": "synthesizer",
+            "to": "graph_orchestrator",
+            "label": "final_report → END",
+            "collectionIndex": 6,
+            "artifactIndex": 7
+          },
+          "point": [
+            710,
+            487
+          ],
+          "sharedNode": "synthesizer"
+        },
+        {
+          "left": {
+            "id": "analyst-to-llm",
+            "from": "analyst",
+            "to": "llm_selector",
+            "label": "invoke",
+            "collectionIndex": 9,
+            "artifactIndex": 10
+          },
+          "right": {
+            "id": "researcher-to-tavily",
+            "from": "researcher",
+            "to": "tavily",
+            "label": "web_search",
+            "collectionIndex": 11,
+            "artifactIndex": 12
+          },
+          "point": [
+            826,
+            322
+          ]
+        },
+        {
+          "left": {
+            "id": "synthesizer-to-llm",
+            "from": "synthesizer",
+            "to": "llm_selector",
+            "label": "invoke",
+            "collectionIndex": 10,
+            "artifactIndex": 11
+          },
+          "right": {
+            "id": "researcher-to-tavily",
+            "from": "researcher",
+            "to": "tavily",
+            "label": "web_search",
+            "collectionIndex": 11,
+            "artifactIndex": 12
+          },
+          "point": [
+            847,
+            462
+          ]
+        }
+      ],
+      "detours": [
+        {
+          "relationship": {
+            "id": "synthesizer-to-end",
+            "from": "synthesizer",
+            "to": "graph_orchestrator",
+            "label": "final_report → END",
+            "collectionIndex": 6,
+            "artifactIndex": 7
+          },
+          "bends": 4,
+          "stretch": 1.125
+        },
+        {
+          "relationship": {
+            "id": "synthesizer-to-llm",
+            "from": "synthesizer",
+            "to": "llm_selector",
+            "label": "invoke",
+            "collectionIndex": 10,
+            "artifactIndex": 11
+          },
+          "bends": 3,
+          "stretch": 1
+        },
+        {
+          "relationship": {
+            "id": "researcher-to-tavily",
+            "from": "researcher",
+            "to": "tavily",
+            "label": "web_search",
+            "collectionIndex": 11,
+            "artifactIndex": 12
+          },
+          "bends": 3,
+          "stretch": 1.162
+        }
+      ],
+      "truncated": false
+    },
+    "hints": [
+      "analyst → synthesizer and synthesizer → graph_orchestrator cross next to synthesizer: move node analyst or graph_orchestrator so the two reach synthesizer from different sides (for example one level with it, one directly above or below it).",
+      "analyst → llm_selector crosses researcher → tavily: move the node of whichever is a branch, return, or second entrance to the other side of the main path, so that relationship runs through an empty corridor.",
+      "synthesizer → llm_selector crosses researcher → tavily: move the node of whichever is a branch, return, or second entrance to the other side of the main path, so that relationship runs through an empty corridor.",
+      "synthesizer → graph_orchestrator needs 4 bends: move node synthesizer or graph_orchestrator so they share a row or column with matching centers, or sit diagonally with a clear corner.",
+      "synthesizer → llm_selector needs 3 bends: move node synthesizer or llm_selector so they share a row or column with matching centers, or sit diagonally with a clear corner.",
+      "researcher → tavily needs 3 bends: move node researcher or tavily so they share a row or column with matching centers, or sit diagonally with a clear corner."
+    ],
+    "repair": "Trace these relationships at the desktop viewport. For Architecture, use references/architecture-layout-repair.md: reflow a blocked main path or tangled connected scene, and repair an isolated defect locally only when the surrounding composition is accepted. Preserve all semantic content and user-fixed geometry. Rerun finalize once after the edit."
+  }
+}

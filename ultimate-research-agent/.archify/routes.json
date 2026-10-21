@@ -1,0 +1,150 @@
+{
+  "artifact": "routes.json",
+  "status": "ready",
+  "phase": "analyze",
+  "targetPath": "/Users/sakshammangla/Documents/General Research agent/ultimate-research-agent",
+  "scanRoot": ".",
+  "confirmedRoutes": [
+    {
+      "id": "route:route_agents_request_handler_py_agents_request_handler_py",
+      "name": "agents/request_handler.py",
+      "entryType": "http",
+      "boundaryKind": "route",
+      "sourcePath": "agents/request_handler.py",
+      "subsystemId": "subsystem-3-0-agents",
+      "summary": "agents/request_handler.py appears to be a route boundary for agents.",
+      "evidence": [
+        "edge:file_agents_request_handler_py:contains:symbol_agents_request_handler_py_function_request_handler:agents/request_handler.py:4:0",
+        "edge:file_agents_request_handler_py:imports:file_state_py:agents/request_handler.py:1:0",
+        "node:file_agents_request_handler_py"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "route:route_agents_request_handler_py_request_handler",
+      "name": "request_handler()",
+      "entryType": "http",
+      "boundaryKind": "route",
+      "sourcePath": "agents/request_handler.py",
+      "subsystemId": "subsystem-3-0-agents",
+      "summary": "request_handler() appears to be a route boundary for agents.",
+      "evidence": [
+        "edge:file_agents_request_handler_py:contains:symbol_agents_request_handler_py_function_request_handler:agents/request_handler.py:4:0",
+        "node:symbol_agents_request_handler_py_function_request_handler"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "route:entrypoint_main_py_main",
+      "name": "main()",
+      "entryType": "cli",
+      "boundaryKind": "entrypoint",
+      "sourcePath": "main.py",
+      "subsystemId": "subsystem-1-1-main-py",
+      "summary": "main() appears to be a entrypoint boundary for main.py.",
+      "evidence": [
+        "edge:file_main_py:calls:symbol_main_py_function_main:main.py:15:0",
+        "edge:file_main_py:contains:symbol_main_py_function_main:main.py:4:0",
+        "edge:symbol_main_py_function_main:calls:ref_agents_analyst_py_call_llm_invoke:main.py:8:0",
+        "edge:symbol_main_py_function_main:calls:ref_main_py_call_print:main.py:10:0",
+        "edge:symbol_main_py_function_main:calls:ref_main_py_call_print:main.py:11:0",
+        "edge:symbol_main_py_function_main:calls:ref_main_py_call_print:main.py:5:0",
+        "edge:symbol_main_py_function_main:calls:ref_main_py_call_print:main.py:6:0",
+        "node:symbol_main_py_function_main"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "route:entrypoint_main_py_main_py",
+      "name": "main.py",
+      "entryType": "cli",
+      "boundaryKind": "entrypoint",
+      "sourcePath": "main.py",
+      "subsystemId": "subsystem-1-1-main-py",
+      "summary": "main.py appears to be a entrypoint boundary for main.py.",
+      "evidence": [
+        "edge:file_main_py:calls:symbol_main_py_function_main:main.py:15:0",
+        "edge:file_main_py:contains:symbol_main_py_function_main:main.py:4:0",
+        "edge:file_main_py:imports:file_llm_py:main.py:1:0",
+        "node:file_main_py"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "route:entrypoint_main_py_print",
+      "name": "print",
+      "entryType": "cli",
+      "boundaryKind": "entrypoint",
+      "sourcePath": "main.py",
+      "subsystemId": "subsystem-1-1-main-py",
+      "summary": "print appears to be a entrypoint boundary for main.py.",
+      "evidence": [
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_main_py_call_print:tests/test_analyst_smoke.py:36:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_main_py_call_print:tests/test_analyst_smoke.py:43:0",
+        "edge:file_tests_test_analyst_smoke_py:calls:ref_main_py_call_print:tests/test_analyst_smoke.py:46:0",
+        "edge:symbol_main_py_function_main:calls:ref_main_py_call_print:main.py:10:0",
+        "edge:symbol_main_py_function_main:calls:ref_main_py_call_print:main.py:11:0",
+        "edge:symbol_main_py_function_main:calls:ref_main_py_call_print:main.py:5:0",
+        "edge:symbol_main_py_function_main:calls:ref_main_py_call_print:main.py:6:0",
+        "node:ref_main_py_call_print"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "route:route_prompts_request_handler_py_prompts_request_handler_py",
+      "name": "prompts/request_handler.py",
+      "entryType": "http",
+      "boundaryKind": "route",
+      "sourcePath": "prompts/request_handler.py",
+      "subsystemId": "subsystem-12-0-prompts",
+      "summary": "prompts/request_handler.py appears to be a route boundary for prompts.",
+      "evidence": [
+        "node:file_prompts_request_handler_py"
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "route:cli_tools_web_search_py_tavilyclient",
+      "name": "TavilyClient",
+      "entryType": "cli",
+      "boundaryKind": "cli",
+      "sourcePath": "tools/web_search.py",
+      "subsystemId": "subsystem-2-0-config-py",
+      "summary": "TavilyClient appears to be a cli boundary for config.py.",
+      "evidence": [
+        "edge:file_tools_web_search_py:calls:ref_tools_web_search_py_call_tavilyclient:tools/web_search.py:18:0",
+        "node:ref_tools_web_search_py_call_tavilyclient"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "route:cli_tools_web_search_py_client_search",
+      "name": "_client.search",
+      "entryType": "cli",
+      "boundaryKind": "cli",
+      "sourcePath": "tools/web_search.py",
+      "subsystemId": "subsystem-7-0-tools",
+      "summary": "_client.search appears to be a cli boundary for tools.",
+      "evidence": [
+        "edge:symbol_tools_web_search_py_function_web_search:calls:ref_tools_web_search_py_call_client_search:tools/web_search.py:32:0",
+        "node:ref_tools_web_search_py_call_client_search"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "route:cli_utils_helpers_py_truncate_text",
+      "name": "truncate_text()",
+      "entryType": "cli",
+      "boundaryKind": "cli",
+      "sourcePath": "utils/helpers.py",
+      "subsystemId": "subsystem-6-0-utils",
+      "summary": "truncate_text() appears to be a cli boundary for utils.",
+      "evidence": [
+        "edge:file_utils_helpers_py:contains:symbol_utils_helpers_py_function_truncate_text:utils/helpers.py:11:0",
+        "node:symbol_utils_helpers_py_function_truncate_text"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "inferredRoutes": []
+}

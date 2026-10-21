@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "7b8162cd-f8fd-4928-9981-b58ad7c95e3d",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/candidate.json",
+  "output": "/Users/sakshammangla/Documents/General Research agent/.archify/architecture-research-agent-20261014-180746/ultimate-research-agent-architecture.html",
+  "specification": {
+    "sha256": "eaaeef589569196cef6a5e95a954a344979bc5edbcaef7c5b3df184220bc3660",
+    "bytes": 8393
+  },
+  "artifact": {
+    "sha256": "e2f803dd6eaad43c6d2618a4f33742ddbe16e4343ca2a0aaf79e28275d084f0c",
+    "bytes": 836399
+  }
+}

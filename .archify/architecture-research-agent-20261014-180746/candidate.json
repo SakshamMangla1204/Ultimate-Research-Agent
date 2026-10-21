@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Ultimate Research Agent Architecture",
+    "output": ".archify/architecture-research-agent-20261014-180746/ultimate-research-agent-architecture.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/SakshamMangla1204/Ultimate-Research-Agent.git",
+      "provider": "github",
+      "link_mode": "web",
+      "revision": "3a61de72c047c6b77bbe4087880bd59d2098a5fd"
+    },
+    "views": [
+      {
+        "id": "end-to-end",
+        "label": "End-to-end run",
+        "focus": ["main", "request_handler", "graph_orchestrator", "planner", "researcher", "analyst", "synthesizer"],
+        "note": "The implemented pipeline is traced from executable entry points through the LangGraph chain."
+      },
+      {
+        "id": "model-and-search",
+        "label": "Model and search",
+        "focus": ["planner", "analyst", "synthesizer", "llm_selector", "tavily", "research_state"],
+        "note": "External model and search dependencies are separated from in-process orchestration."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "main",
+      "type": "external",
+      "label": "CLI Entry Point",
+      "sublabel": "direct LLM smoke call",
+      "tag": "verified",
+      "icon": "start",
+      "pos": [40, 380],
+      "size": [130, 64],
+      "sources": [
+        { "path": "ultimate-research-agent/main.py", "line": 4, "end_line": 15, "label": "CLI main" }
+      ]
+    },
+    {
+      "id": "request_handler",
+      "type": "backend",
+      "label": "Request Handler",
+      "sublabel": "initializes ResearchState",
+      "tag": "verified",
+      "pos": [210, 380],
+      "size": [140, 64],
+      "sources": [
+        { "path": "ultimate-research-agent/agents/request_handler.py", "line": 4, "end_line": 29, "label": "state factory" }
+      ]
+    },
+    {
+      "id": "graph_orchestrator",
+      "type": "backend",
+      "label": "LangGraph Orchestrator",
+      "sublabel": "linear START-to-END pipeline",
+      "tag": "verified",
+      "pos": [420, 340],
+      "size": [210, 80],
+      "sources": [
+        { "path": "ultimate-research-agent/graph/research_graph.py", "line": 9, "end_line": 20, "label": "graph wiring" }
+      ]
+    },
+    {
+      "id": "research_state",
+      "type": "database",
+      "label": "Research State",
+      "sublabel": "typed in-memory workflow state",
+      "tag": "verified",
+      "pos": [960, 70],
+      "size": [140, 64],
+      "sources": [
+        { "path": "ultimate-research-agent/state.py", "line": 4, "end_line": 33, "label": "ResearchState" }
+      ]
+    },
+    {
+      "id": "planner",
+      "type": "backend",
+      "label": "Planner",
+      "sublabel": "builds research plan and task list",
+      "tag": "verified",
+      "pos": [690, 260],
+      "size": [140, 64],
+      "sources": [
+        { "path": "ultimate-research-agent/agents/planner.py", "line": 8, "end_line": 49, "label": "planner node" }
+      ]
+    },
+    {
+      "id": "researcher",
+      "type": "backend",
+      "label": "Researcher",
+      "sublabel": "task research via web search",
+      "tag": "verified",
+      "pos": [690, 360],
+      "size": [140, 64],
+      "sources": [
+        { "path": "ultimate-research-agent/agents/researcher.py", "line": 5, "end_line": 77, "label": "researcher node" }
+      ]
+    },
+    {
+      "id": "analyst",
+      "type": "backend",
+      "label": "Analyst",
+      "sublabel": "evaluates evidence sufficiency",
+      "tag": "verified",
+      "pos": [690, 460],
+      "size": [140, 64],
+      "sources": [
+        { "path": "ultimate-research-agent/agents/analyst.py", "line": 7, "end_line": 62, "label": "analyst node" }
+      ]
+    },
+    {
+      "id": "synthesizer",
+      "type": "backend",
+      "label": "Synthesizer",
+      "sublabel": "produces final report",
+      "tag": "verified",
+      "pos": [690, 560],
+      "size": [140, 64],
+      "sources": [
+        { "path": "ultimate-research-agent/agents/synthesizer.py", "line": 8, "end_line": 41, "label": "synthesizer node" }
+      ]
+    },
+    {
+      "id": "llm_selector",
+      "type": "cloud",
+      "label": "LLM Selector",
+      "sublabel": "Gemini, Mistral, or Groq",
+      "tag": "verified",
+      "pos": [690, 660],
+      "size": [140, 64],
+      "sources": [
+        { "path": "ultimate-research-agent/llm.py", "line": 23, "end_line": 62, "label": "provider selection" }
+      ]
+    },
+    {
+      "id": "tavily",
+      "type": "external",
+      "label": "Tavily Search",
+      "sublabel": "normalized web results",
+      "tag": "verified",
+      "pos": [1160, 280],
+      "size": [140, 64],
+      "sources": [
+        { "path": "ultimate-research-agent/tools/web_search.py", "line": 21, "end_line": 53, "label": "web_search" }
+      ]
+    },
+    {
+      "id": "web_fetch",
+      "type": "external",
+      "label": "Web Fetch",
+      "sublabel": "URL validation + readable text",
+      "tag": "inferred use",
+      "pos": [1160, 500],
+      "size": [140, 64],
+      "sources": [
+        { "path": "ultimate-research-agent/tools/web_fetch.py", "line": 68, "end_line": 169, "label": "web_fetch tool" }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "LangGraph research pipeline",
+      "wraps": ["graph_orchestrator", "research_state", "planner", "researcher", "analyst", "synthesizer"],
+      "pad": 22
+    }
+  ],
+  "connections": [
+    {
+      "id": "main-to-request-handler",
+      "from": "main",
+      "to": "request_handler",
+      "label": "inferred initialization",
+      "variant": "dashed"
+    },
+    {
+      "id": "handler-to-graph",
+      "from": "request_handler",
+      "to": "graph_orchestrator",
+      "label": "intended initial state",
+      "variant": "dashed"
+    },
+    {
+      "id": "graph-to-planner",
+      "from": "graph_orchestrator",
+      "to": "planner",
+      "label": "START",
+      "variant": "emphasis"
+    },
+    {
+      "id": "planner-to-researcher",
+      "from": "planner",
+      "to": "researcher",
+      "label": "task list",
+      "variant": "emphasis"
+    },
+    {
+      "id": "researcher-to-analyst",
+      "from": "researcher",
+      "to": "analyst",
+      "label": "sources",
+      "variant": "emphasis"
+    },
+    {
+      "id": "analyst-to-synthesizer",
+      "from": "analyst",
+      "to": "synthesizer",
+      "label": "analysis",
+      "variant": "emphasis"
+    },
+    {
+      "id": "synthesizer-to-end",
+      "from": "synthesizer",
+      "to": "graph_orchestrator",
+      "label": "final_report → END",
+      "variant": "default"
+    },
+    {
+      "id": "graph-to-state",
+      "from": "graph_orchestrator",
+      "to": "research_state",
+      "label": "StateGraph",
+      "variant": "default"
+    },
+    {
+      "id": "planner-to-llm",
+      "from": "planner",
+      "to": "llm_selector",
+      "label": "invoke",
+      "variant": "default"
+    },
+    {
+      "id": "analyst-to-llm",
+      "from": "analyst",
+      "to": "llm_selector",
+      "label": "invoke",
+      "variant": "default"
+    },
+    {
+      "id": "synthesizer-to-llm",
+      "from": "synthesizer",
+      "to": "llm_selector",
+      "label": "invoke",
+      "variant": "default"
+    },
+    {
+      "id": "researcher-to-tavily",
+      "from": "researcher",
+      "to": "tavily",
+      "label": "web_search",
+      "variant": "emphasis"
+    },
+    {
+      "id": "tavily-to-web-fetch",
+      "from": "tavily",
+      "to": "web_fetch",
+      "label": "not wired",
+      "variant": "security"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Verified control flow",
+      "items": [
+        "graph/research_graph.py registers planner, researcher, analyst, and synthesizer and wires the linear START-to-END path.",
+        "Planner, analyst, and synthesizer call the selected LangChain chat model; researcher calls tools.web_search.web_search.",
+        "State is an in-memory ResearchState TypedDict; no database or queue is evidenced."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Inferred or not wired",
+      "items": [
+        "main.py invokes the selected LLM directly and does not import request_handler or graph.research_graph.",
+        "request_handler is exported and initializes state, but no call site invokes it in the inspected graph path.",
+        "tools/web_fetch.py is implemented but not imported by the current research pipeline."
+      ]
+    }
+  ]
+}
